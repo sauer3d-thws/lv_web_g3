@@ -60,6 +60,8 @@ section {
 }
 
 
+
+
 /* -------------------- ALLGEMEINE STRUKTUR -------------------------------*/
 
 /* Standardmäßig ist jede Folie eine Inhaltsfolie */
@@ -839,12 +841,12 @@ section.twocolumns>p {
 }
 
 /* Alles nach dem Absatz auch in die zweite Spalte */
-section.twocolumns>p ~ * {
+section.twocolumns>p~* {
   grid-column: 2;
 }
 
 /* Code ohne Abstand nach oben (negiert grid row-gap) */
-section.twocolumns>p + pre {
+section.twocolumns>p+pre {
   margin-top: -20px !important;
 }
 
@@ -902,4 +904,10 @@ footer a:hover {
 section.titlepage footer,
 section.fullscreen footer {
   display: none;
+}
+
+
+pre,
+code {
+  font-size: 18px !important;
 }

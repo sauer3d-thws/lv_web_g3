@@ -670,7 +670,9 @@ der Analyse des Nutzerverhaltens.
 - **Wo:** Am **CERN** (Europäische Organisation für
 Kernforschung) in Genf
 - **Wann:** Entwickelt ab **1989**, vorgestellt **1990/1991**
-- **Ursprünglicher Zweck:** Wissenschaftler sollten Forschungsergebnisse unkompliziert austauschen und verlinken können
+- **Ursprünglicher Zweck:** Wissenschaftler sollten
+Forschungsergebnisse unkompliziert
+austauschen und verlinken können
 - **Das Gesamtkonzept:** Er erfand gleichzeitig das
 **HTTP-Protokoll**, die **URL** (Webadresse) sowie
 den ersten Webbrowser/Webserver –
@@ -2342,7 +2344,7 @@ Der weltweite Standard für moderne Webentwicklung:
 
 **Emmet – Schneller HTML schreiben**
 
-Ein bereits integriertes Feature, das Tipparbeit spart:
+Integriertes Feature, das Tipparbeit spart:
 - **Funktionsweise**: Kurzschreibweisen eintippen
 und mit der **Tab-Taste** expandieren lassen.
 - **Wichtige Shortcuts für den Einstieg**:
@@ -2351,7 +2353,8 @@ und mit der **Tab-Taste** expandieren lassen.
   - `p` + Tab $\rightarrow$ Erzeugt `<p></p>`.
   - `ul>li*3` + Tab $\rightarrow$ Erzeugt eine
   Liste mit 3 Listeneinträgen.
-  - `h1{Titel}` + Tab $\rightarrow$ Erzeugt `<h1>Titel</h1>`.
+  - `h1{Titel}` + Tab $\rightarrow$ Erzeugt
+  `<h1>Titel</h1>`.
 
 
 ![bg right](img/vscode_emmet.jpg)
@@ -4049,6 +4052,7 @@ width: 80%; max-width: 1600px;
 ```
 
 ---
+<!-- _class: fullscreen -->
 
 ![bg](img/06a.jpg)
 
@@ -4096,20 +4100,259 @@ min-height: 360px;
 ```
 
 ---
-# Das Projekt
-2020 beschließt der KFZ Mechaniker Meister Maik seine Passion zur Haupterwerbsquelle und sich selbstständig zu machen. Durch sein mobiles Leben im LKW hat er sich auf den Ausbau von Fahrzeugen zu autarken Wohnräumen spezialisiert. Seine jahrelange Erfahrung in der Werkstattleitung eines Camping- und Caravantechnik Anbieters nutzt er, um Caravans, Wohnmobile und individuelle Fahrzeugausbauten zu reparieren, pflegen und umzurüsten.
-![bg right:40%](img/das-ist-Maik.jpeg)
+<!-- _class: twocolumns -->
+##### weitere css Anpassungen
+- zur besseren Integration der h1
+- Entfernen des grauen Hintergundes bei der h1
+- Nur bei h2 grauer Hintergrund
+- h1container wird rechts ausgerichtet
+
+```css
+h1, h2 { display: inline;
+color: #FFFFFF ;
+font-family: "Trebuchet MS", ...
+font-size: 1.4em;
+text-align: left;
+margin: 0px;
+padding: 2px}
+
+h1{font-size: 1.8em;
+font-family: '1-Punk',...
+color: #138492;
+margin-right: 30px;}
+
+h2{ background-color: #303030;}
+
+#h1container {text-align: right;}
+```
+
+---
+<!-- _class: fullscreen -->
+
+![bg](img/06b.jpg)
+
+---
+<!-- _class: twocolumns -->
+#### Der Body
+- Content und Body sollen sich abheben
+- Einfügen eines schwarzen Hintergrundes
+- css Reset des Bodys
+
+```css
+body {
+font-family: tahoma,arial,helvetica,verdana,sans-serif;
+margin: 0px;
+padding: 0;
+background-color: #000000; }
+
+```
+
+---
+<!-- _class: fullscreen -->
+
+![bg](img/06c.jpg)
+
+---
+<!-- _class: twocolumns -->
+#### Ein Zweispalter
+- Nutzung von html5-Tags
+- aside für Seitenspalte mit Menü
+- main-tag für die
+
+
+```html
+<div id="body" class="col-1">
+<aside>
+  <nav>
+    <!-- Hier kommt später unsere Navigation rein -->
+    ...
+  </nav>
+</aside>
+```
+
+```html
+<main>
+  <article>
+    <h2>Mobiles Leben und Arbeiten</h2>
+    ....
+  </article>
+</main>
+```
+---
+<!-- _class: twocolumns -->
+#### Im css
+
+- feste Breite von 220px (erwartbare Textlänge)
+- float > Element wird nach links gerückt
+- Umfließen durch nachfolgende Elemente
+- main-Container wird als Block in eine Rechteck gezwungen
+- fester Abstand nach links wegen nav
+
+```css
+/*Navigation*/
+aside {
+  float: left;
+  width: 220px;
+  padding: 0px 0px 0px 20px;
+  margin: 20px 0px 0px 0px;}
+```
+```css
+/*Hauptinhalt*/
+main {
+  padding: 10px;
+  margin: 20px 0px 0px 250px;
+  display: block;
+}
+```
+
+---
+<!-- _class: fullscreen -->
+
+![bg](img/06d.jpg)
+
+---
+<!-- _class: twocolumns -->
+#### Der Footer
+- weißer Text
+- auf grauem Grund
+- im Punk-Style
+- zentriert
+
+```css
+/* und unten der Footer */
+footer { color: #ffffff;
+font-family: '1-Punk',Georgia,"Trebuchet MS"
+verdana,arial
+helvetica,sans-serif;
+background-color: #303030;
+margin: 20px 0px 0px 0px;
+padding: 10px 20px;
+text-align: center; font-size: 0.8em;
+}
+```
+---
+<!-- _class: fullscreen -->
+
+![bg](img/06e.jpg)
 
 ---
 
-**Seine Dienstleistungen beinhalten**
-- KFZ und LKW Reparaturen
-- Caravan- und Wohnmobil Reparaturen
-- Vorbereitung zur TÜV Prüfung und Prüfung von Gasanlagen
-- Ein- Aus- und Umbau der KFZ Elektrik bis zur autarken Solaranlagenplanung
-- Kompletter Fahrzeugausbau eines Transportfahrzeuges zum
-„Wohn“-Mobil
-Da Maik ein mobiles Leben führt, ist er selten am gleichen Platz zu finden. Um ihn und seine Dienstleistungen dennoch auffinden zu können, benötigt er eine gut auffindbare Webseite mit seinen digitalen Kontaktdaten.
+<!-- _class: twocolumns -->
+#### Die vertikale Navigation
+- Listenabstände / Bullets reseten
+- Hintergrund weiß, text schwarz bei normalen Links
+- Beim Hovern helle Schrift auf dunklem Grund
+
+
+
+```css
+nav ul {
+  padding: 0;
+  margin-top: 7px; list-style: none;
+}
+nav ul a:link, nav ul a:visited, nav ul a:active {
+  color: #000000;
+  background-color: #FFFFFF;
+  padding: 3px 3px 3px 8px;
+  margin: 0;
+  text-decoration: none;
+  font-size: 1em;
+  font-family: Georgia,"Trebuchet MS",
+  verdana,arial,helvetica,sans-serif;
+  display: block;
+  font-weight: bold;
+  line-height: 25px;
+  border-bottom: 1px dotted #5F5F5F;
+}
+nav ul a:hover, nav ul a:focus {
+  font-size: 1.2em;
+  color: #FFFFFF;
+  background-color: #303030;
+}
+```
+
+---
+
+<!-- _class: twocolumns -->
+#### Die horizontale Navigation
+- Navigationsleiste als unterer Abschluss des Headers
+- Einfügen DIV mit ID "navihor"
+
+```html
+
+<header>
+  <div id="h1container">
+  <h1>Maik`s mobiler Service</h1>
+  <p>mobiles Leben und Arbeiten<p> 
+  </div>
+  <div id="navihor">
+    <a href="#">Kontakt</a>
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+  </div>
+</header>
+```
+
+---
+<!-- _class: twocolumns -->
+#### CSS für horizontale Navigation
+- Header wird 360 Pixel hoch
+- Abstand der Navigationsleiste zum oberen Header wird 320px
+- horizontale Navigation zentrieren
+
+
+```css
+#h1container p{
+  margin: 0 30px;
+  padding: 0;
+  background-color: #none;
+  font-size: 1.2em;
+  font-family: '1-Punk',Georgia,"Trebuchet MS"
+  verdana,arial,helvetica,sans-serif; 
+  text-align: right;
+  color: #138492;
+}
+
+#navihor {
+  height: 33px;
+  background-color: #303030;
+  text-align: center;
+  margin-top: 320px;
+}
+
+```
+---
+<!-- _class: twocolumns -->
+- Style für die Links in der Navigation
+- weißer Text auf grauem Grund
+- beim Hovern grün hinterlegt
+- Padding für Vergrößerung der klickbaren Fläche
+
+
+
+```css
+#navihor a:link,
+#navihor a:active,
+#navihor a:visited {
+  color: #FFFFFF;
+  background-color: #303030;
+  text-decoration: none;
+  font-family: tahoma, arial,
+  helvetica, verdana, sans-serif;
+  font-size: 1em;
+  line-height: 33px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px; font-weight: bold;
+}
+
+#navihor a:hover, a:focus { 
+  color: #000000;
+  background-color: #1499a9;
+}
+
+```
 
 ---
 
