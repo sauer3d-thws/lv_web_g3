@@ -4356,15 +4356,449 @@ nav ul a:hover, nav ul a:focus {
 
 ---
 
-# Der fundamentale Paradigmenwechsel
-## Vom manuellen Kodieren zur KI-gestützten Orchestrierung
+<!-- _class: fullscreen -->
 
-Quelle:
-(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 16, No. 11, 2025
+![bg](img/06f.jpg)
 
-**"AI in Web Development: A Comparative Study of
-Traditional Coding and LLM-Based Low-Code
-Platforms"**
+---
+<!-- _class: twocolumns -->
+#### Bilder im Fließtext
+- max Zeichen pro Zeile cs. 75
+- Bilder im Fließtext können umflossen werden
+- margin für Abstand des Bildes vom Text
+- Kopieren des Bildes thatsme.jpg in den Ordner "img" aus dem Material-Ordner
+
+```html
+<main>
+<article>
+    <img class="bildImFliesstext"
+        src="img/thatsme.jpg" alt="that`s me">
+    <h2>Mobiles Leben und Arbeiten</h2>
+    <p> … </p>
+</article>
+</main>
+```
+
+
+```css
+article {
+  width: 100%;
+  display: inline-block;}
+
+.bildImFliesstext {
+  float:right;
+  width: 30%;
+  margin-top: 0px;
+  margin-right:20px;
+  margin-bottom: 10px; 
+  padding: 10px;}
+```
+
+---
+
+<!-- _class: fullscreen -->
+
+![bg](img/06g.jpg)
+
+
+---
+<!-- _class: structural -->
+## Mobile First!
+- 44,2 % der Deutschen Internetnutzer greifen mobil zu.
+- Im internationalen Vergleich sind dies relativ wenige.
+- Weltweit sind es im durschnitt über 53%.
+- Interessant: Mobile steigt KI
+- Desktop gewinnt an Boden im Web
+
+
+##### https://statistiken-aktuell.de/smartphone-internetnutzung/
+
+
+
+![bg right:50%](img/web-stats.jpg)
+
+---
+<!-- _class: structural -->
+### Warum mobile First?
+- Ladezeitoptimierung
+- zuerst Inhalte für Mobilgeräte laden
+- danach Desktop-Inhalte
+- Lösung durch Media-Queries
+
+---
+
+<!-- _class: img-right -->
+### CSS Media Queries
+
+- **Was sind Media Queries?**
+  - Ermöglichen, CSS-Regeln nur dann anzuwenden, wenn bestimmte Bedingungen (wie Bildschirmbreite) erfüllt sind.
+  - Webseite passt sich automatisch an Smartphones, Tablets, Desktops an
+
+```css
+@media (max-width: 768px) {
+  body {
+    background-color: lightblue;
+  }
+}
+```
+
+![Media Queries Concept](img/media_queries_concept.png)
+
+---
+
+#### Medientypen (Media Types)**
+
+- **Allgemeine Kategorien** von Ausgabegeräten:
+  - `all`: Für alle Geräte (Standard).
+  - `print`: Für den Druckmodus (z. B. wenn die Seite als PDF exportiert wird).
+  - `screen`: Für Bildschirme (Smartphones, Monitore).
+
+```css
+/* Wird nur beim Ausdrucken angewendet */
+@media print {
+  nav {
+    display: none; /* Navigation beim Drucken ausblenden */
+  }
+}
+```
+
+---
+
+#### Medienmerkmale (Media Features)**
+
+- **Spezifische Eigenschaften** des Geräts oder Browsers:
+  - `width` / `height`: Breite oder Höhe des Browserfensters.
+  - `max-width` / `min-width`: Sehr oft genutzt, um Breakpoints (Umbruchpunkte) zu definieren.
+  - `orientation`: `portrait` (Hochformat) oder `landscape` (Querformat).
+
+```css
+/* Gilt für Geräte im Querformat */
+@media (orientation: landscape) {
+  .sidebar {
+    display: block;
+  }
+}
+```
+
+---
+
+#### Logische Operatoren in Media Queries**
+
+- Bedingungen lassen sich mit `and`, `not`, und `only` verknüpfen.
+- Man kann auch Kommas `,` verwenden (entspricht einem logischen "ODER").
+
+```css
+/* Bildschirm UND mindestens 1024px breit */
+@media screen and (min-width: 1024px) {
+  .container {
+    display: flex;
+  }
+}
+
+/* Bildschirm ODER Druck */
+@media screen, print {
+  /* Gemeinsame Stile */
+}
+```
+
+
+---
+<!-- _class: structural -->
+### Praxis-Beispiel: Media Queries im Einsatz
+
+Wir betrachten unsere Beispielseite `Samples/Media Querie/index.html`. 
+Diese ändert ihr Layout sowie die Hintergrundfarbe dynamisch je nach verfügbarem Platz im Browserfenster.
+
+---
+<!-- _class: twocolumns -->
+#### Die Mobile Ansicht (Default)
+
+- **Mobile First:** Die Basis-Regeln gelten für kleine Bildschirme.
+- Die Boxen nehmen `100%` der Breite ein und stapeln sich vertikal.
+- Der Hintergrund ist ein helles Grau (`#f4f4f9`).
+
+```css
+.box {  flex: 1 1 100%; /* 1 Spalte */}
+```
+
+![Mobile Viewport](Samples/Media%20Querie/media_query_mobile.png)
+
+---
+<!-- _class: twocolumns -->
+#### Die Tablet Ansicht (ab 600px)
+
+- Sobald der Bildschirm **mindestens 600px** breit ist, greift die erste Media Query.
+- Das Layout wechselt auf **2 Spalten** (jede Box ca. 50%).
+- Zur Verdeutlichung wechselt der Hintergrund auf Hellblau (`#e3f2fd`).
+
+```css
+@media screen and (min-width: 600px) {
+  body { background-color: #e3f2fd; }
+  .box { flex: 1 1 calc(50% - 20px); }}
+```
+
+![Tablet Viewport](Samples/Media%20Querie/media_query_tablet.png)
+
+---
+<!-- _class: twocolumns -->
+#### Die Desktop Ansicht (ab 900px)
+
+- Ab einer Bildschirmbreite von **900px** wird die nächste Query aktiv.
+- Das Flexbox-Layout verteilt die Boxen nun in **3 Spalten** (je ca. 33%).
+- Die Hintergrundfarbe wird auf Hellgrün (`#e8f5e9`) gesetzt.
+
+```css
+@media screen and (min-width: 900px) {
+  body { background-color: #e8f5e9; }
+  .box { flex: 1 1 calc(33.333% - 20px); }}
+```
+
+![Desktop Viewport](Samples/Media%20Querie/media_query_desktop.png)
+
+---
+<!-- _class: structural -->
+### Maik`s Media Queries
+
+> Mobile First heißt deswegen Mobile First weil zuerst die mobile Ansicht gestaltet wird.
+
+ups... 🙄
+
+> Eine mobile Ansicht ist aber schnell gemacht...
+
+---
+<!-- _class: twocolumns -->
+
+### 07 Maik`s Mobile First
+- Bild header-mobile.jpg in img kopieren
+- wrapper zurücksetzen
+- headerbild ersetzen
+- Bild zentrieren
+- Höhedes headers reduzieren
+
+```css
+#wrapper {
+background-color: #FFFFFF;
+color: #000000;
+margin: 0 auto;
+padding: 0px;
+width: 100%; max-width: 1600px;
+}
+```
+
+```css
+header {
+margin: 0px;
+padding-top: 10px;
+background:url(img/header-mobile.jpg) no-repeat;
+background-size: cover;
+background-position: center;
+background-color: #eef1f0;
+min-height: 320px;
+}
+```
+---
+<!-- _class: twocolumns -->
+- Überschrift unsichtbar machen
+- wird in der Desktop-Ansicht wieder sichtbar gemacht
+- h1-container wird zu h1-container-desktop
+
+Im HTML:
+```html
+<div id="h1container-desktop">
+    <h1>Maik`s mobiler Service</h1>
+    <p>mobiles Leben und Arbeiten<p>
+</div>
+```
+Im CSS:
+
+```css
+#h1container-desktop {
+    text-align:right;
+    display: none;}
+
+#h1container-desktop p{
+    margin: 0 30px; 
+    padding: 0;
+    background-color: #none;
+    font-size: 1.2em;
+    font-family: '1-Punk',Georgia,
+    "Trebuchet MS",verdana,arial,helvetica,sans-serif;
+    text-align: right;
+    color: #138492;}
+```
+
+---
+<!-- _class: twocolumns -->
+- Anpassen der horizontalen Navigationsleiste
+- Unterbrechen des Floatens der Hauptnavigation
+- Padding links hinzufügen
+```css
+#navihor {
+  height: auto;
+  background-color: #303030;
+  text-align: center;
+  margin-top: 320px;}
+
+aside {
+  float: clear;
+  width: 100%;
+  padding: 0px; 
+  margin: 0px;}
+
+nav ul a:link, nav ul a:visited, nav ul a:active {
+...
+padding-left: 20px;
+...;
+}
+```
+---
+<!-- _class: twocolumns -->
+- Anpassen des Main-Containers
+- Zurücksetzen der Abstände
+- Anpassen des Bildes im Fließtext
+- Verkleinerung der h1
+- Verkleinerung des Footers
+
+
+```css
+main {
+  padding: 0px 0px 0px 20px;
+  margin: 20px 0px 0px 0px;
+  display: block;
+}
+```
+```css
+.bildImFliesstext {
+...
+  width: 50%;
+...}
+```
+
+```css
+h1, h2 {
+...
+  font-size: 1.2em  ...}
+```
+
+```css
+footer {
+...
+  font-size: 0.6em  ...}
+```
+
+---
+<!-- _class: structural -->
+>> Fertig ist die mobile Webseite!
+
+![bg right:50%](img/maik-mobile.jpg)
+
+---
+> Nun testen Sie die Seite in der Desktop-Ansicht.
+Gruselig?
+... Dann brauchen wir eine neue Desktop-Version
+
+---
+<!-- _class: structural -->
+### Die Desktop Version (08)
+
+An Breakpoints bricht mit Media-Queries das Design um.
+Anzahl der Breakpoints ist nicht festgelegt / limitiert.
+Schrittweises Anpassen des Designs, immer dann, wenn "etwas nicht passt"
+
+
+Sinnvolle Breakpoints sind:
+- Smartphones @media (min-width: 576px) { ... }
+- Tablets @media (min-width: 768px) { ... }
+- Desktops @media (min-width: 992px) { ... }
+- Large desktops @media (min-width: 1200px) { ... }
+
+
+---
+<!-- _class: structural -->
+>> Wichtig!
+Breakpoints werden immer am Ende der css-Regeln definiert.
+Sie überschreiben die vorherigen Definitionen
+
+
+---
+
+- erster Breakpoint, Ränder aktivieren
+- zweiter Breakpoint (768 Pixel)
+Floaten aktivieren, Zweispaltigkeit einrichten
+
+
+```css
+@media screen and (min-width: 576px) {
+    #wrapper {
+    width: 80%;
+    } }
+```
+```css
+@media screen and (min-width: 768px) {
+aside {
+float: left;
+width: 30%;
+margin-right: 20px; }
+main {
+width: 60%;
+margin-left: 30%;
+} }
+```
+![bg right](img/media_queries_1.jpeg)
+
+---
+- Tabletversion ab ca. 1024 Pixel
+- Austausch des Headerbildes, Verschieben der horizontalen Navigation
+
+```css
+@media screen and (min-width: 1024px) {
+header {
+background:url(img/header.jpg) no-repeat;
+min-height: 368px;
+}
+#navihor {
+margin-top: 368px; }}
+```
+
+---
+<!-- _class: fullscreen -->
+
+![bg](img/media_queries_2.jpg)
+
+---
+<!-- _class: twocolumns -->
+- zurück zum Desktop ab 1200 px
+- Den mobile-Container blenden wir aus.
+- Dem Header geben wir noch etwas mehr Luft.
+- Die Hauptnavigation im aside Container erhält eine feste Breite, damit die Navigation nicht zu breit wird.
+- Daher können wir den main-Container jetzt wieder etwas breiter machen.
+- So passt auch wieder etwas mehr Text hinein.
+- Die Bilder dürfen dafür wieder etwas kleiner sein.
+
+```css
+
+@media screen and (min-width: 1200px) {
+#h1container-desktop {
+display: block;
+}
+#h1container-mobile {
+display: none;}
+#navihor {
+margin-top: 320px;}
+aside {
+width: 220px;}
+main {
+width: 70%;
+margin-left: 25%;}
+p {
+max-width: 75ch; }
+.bildImFliesstext {
+width: 30%;}}
+```
+---
+<!-- _class: fullscreen -->
+
+![bg](img/media_queries_3.jpg)
 
 ---
 
@@ -4409,3 +4843,15 @@ KI-gestützte Identifikation von „Code Smells“ und automatische Optimierung 
 
 
 
+---
+
+
+# Der fundamentale Paradigmenwechsel
+## Vom manuellen Kodieren zur KI-gestützten Orchestrierung
+
+Quelle:
+(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 16, No. 11, 2025
+
+**"AI in Web Development: A Comparative Study of
+Traditional Coding and LLM-Based Low-Code
+Platforms"**

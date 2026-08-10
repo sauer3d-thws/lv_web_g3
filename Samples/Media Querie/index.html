@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries Beispiel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            flex: 1 1 100%; /* Standard: 1 Spalte auf Mobile */
+            text-align: center;
+        }
+
+        /* --- Media Queries --- */
+
+        /* Tablet (ab 600px Breite) */
+        @media screen and (min-width: 600px) {
+            body {
+                background-color: #e3f2fd; /* Hellblau */
+            }
+            .box {
+                flex: 1 1 calc(50% - 20px); /* 2 Spalten */
+            }
+        }
+
+        /* Desktop (ab 900px Breite) */
+        @media screen and (min-width: 900px) {
+            body {
+                background-color: #e8f5e9; /* Hellgrün */
+            }
+            .box {
+                flex: 1 1 calc(33.333% - 20px); /* 3 Spalten */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Media Queries in Aktion</h1>
+    <p>Verkleinern oder vergrößern Sie das Browserfenster, um die Layout- und Farbanpassungen zu sehen (Mobile -> Tablet -> Desktop).</p>
+    
+    <div class="container">
+        <div class="box">
+            <h2>Box 1</h2>
+            <p>Passt sich der Bildschirmgröße an.</p>
+        </div>
+        <div class="box">
+            <h2>Box 2</h2>
+            <p>Passt sich der Bildschirmgröße an.</p>
+        </div>
+        <div class="box">
+            <h2>Box 3</h2>
+            <p>Passt sich der Bildschirmgröße an.</p>
+        </div>
+    </div>
+</body>
+</html>
