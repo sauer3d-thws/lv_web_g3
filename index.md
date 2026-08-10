@@ -4960,5 +4960,195 @@ Denkt daran:
 
 Zitat von Bill Gates
 
+
 ---
+
+---
+<!-- _class: structural -->
+
 # Javascript Grundlagen
+
+> Wenn html das Grundgerüst und css das Design ist, dann ist Javascript das was Leben einhaucht!
+
+---
+
+## Einführung & Moderne Sprachgrundlagen
+### Woher kommt JavaScript?
+
+- Erfunden 1995 von "Netscape"
+- später später mit ECMA
+(European Computer Manufacturers Association) weiter entwickelt
+- Javascript ist nicht gleich Java!
+
+---
+### Was Javascript kann
+- kann komplette Anwendungen entwickeln
+- kann grafische Objekte manipulieren und animieren
+- kann Elemente dynamisieren
+- kann Daten zwischen Browser und Webserver austauschen,
+ohne dass Seite neu geladen werden muss
+- kann Daten auf dem Client speichern
+- kann lokalisierte Informationen anzeigen
+- kann Daten des Clientrechners auswerten und  Seiten und Inhalte an die Gegebenheiten des Besuchers anpassen
+
+---
+### Was Javascript nicht kann
+- keine Datenbank abfragen
+- keine Dateien auf dem Server speichern oder organisieren
+- kann keine Programme auf dem Server ausführen
+- kann keine Informationen aus anderen Webseiten abrufen, da diese mit CORS-Mechanismen geschützt sein können.
+- kann Standardmäßig nicht direkt auf das Dateisystem des Computers zugreifen (aus Sicherheitsgründen)
+- kann nicht direkt auf die Hardware des Computers zugreifen (aus Sicherheitsgründen)
+
+---
+### Javascript und Sicherheit
+
+Früher war Javascript ein Sicherheitsrisiko.
+Heute ist es das nicht mehr. Die Programmiersprache
+wird von den Herstellern der Browser stark reglementiert.
+
+> Javascript läuft also nur im "Sandkasten" (Sandbox) des Browsers!
+
+---
+### ECMAScript vs. JavaScript-Engines
+- **ECMAScript (ES):** Der offizielle **Bauplan** (Standard & Spezifikation)
+  - Legt Regeln, Syntax und neue Features fest (z. B. ES6, `const`/`let`, Arrow Functions).
+  - Sagt, *wie* JavaScript geschrieben werden muss.
+- **JS-Engine:** Der **Motor** (die Software im Browser)
+  - Liest den JavaScript-Code und übersetzt ihn in Maschinencode (Ausführung).
+  - Setzt den ECMAScript-Bauplan in der Praxis um.
+- **Die bekanntesten Engines:**
+  - **V8:** Google Chrome, Node.js, Microsoft Edge, Brave
+  - **JavaScriptCore (Nitro):** Apple Safari (iOS / macOS)
+  - **SpiderMonkey:** Mozilla Firefox
+
+---
+
+ECMAScript ist das **Rezept**,
+die JS-Engine ist der **Koch**,
+der das **Gericht** zubereitet!
+
+> Javascript wird  zur Laufzeit von der JS-Engine des Browsers übersetzt, interpretiert und ausgeführt.
+
+---
+### Entwicklertools & Debugging
+
+Entwicklertools der Browser (Console, Sources, Debugging)
+
+<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>HIER GEHTS WEITER<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+---
+### Einbindung von Javascript
+
+Saubere Einbindung im HTML: <script defer> und ES-Module (type="module")
+Entfall: Keine veralteten Attribute (language, version=1.6) mehr.
+
+---
+### Variablen und Datentypen
+
+Variablen deklarieren: const (Standard) vs. let (Veränderlich)
+Entfall: Expliziter Verzicht auf var (Hoisting-Problematik).
+Primitive Datentypen (string, number, boolean, undefined, null, symbol, bigint)
+Strikte Gleichheit (=== und !==) vs. lose Gleichheit (==)
+
+---
+### String-Verarbeitung & Template Literals
+
+Strings erstellen und verarbeiten (Eigenschaften & Methoden)
+Template Literals mit Backticks (`Hallo ${name}!`) & Mehrzeiligkeit
+Entfall: Keine unübersichtliche String-Konkatenation mit + mehr.
+1.3 String-Verarbeitung & Template Literals
+Strings erstellen und verarbeiten (Eigenschaften & Methoden)
+Template Literals mit Backticks (`Hallo ${name}!`) & Mehrzeiligkeit
+Entfall: Keine unübersichtliche String-Konkatenation mit + mehr.
+
+
+
+---
+
+🔹 Block 2: Kontrollstrukturen, Funktionen & Scope
+(Umfang: 1 SWS Vorlesung + 1 SWS Übung)
+
+2.1 Kontrollstrukturen & Entscheidungen
+Verzweigungen: if / else if / else
+Mehrfachauswahl mit switch / case
+Ternärer Operator (Bedingung ? Wert1 : Wert2)
+2.2 Schleifen & moderne Iteration
+Klassische Schleifen: for, while, do-while
+Moderne Iteration: for...of für Werte, for...in für Objekteigenschaften
+Schleifensteuerung mit break und continue
+2.3 Funktionen & Arrow Functions
+Function Declarations vs. Function Expressions
+Arrow Functions (const name = (param) => { ... })
+Standard-Parameter (Default Parameters) & Rest-Parameter (...args)
+Scope (Block Scope vs. Global Scope), Lexical Environment & Closures
+Entfall: Keine alten Mozilla-Lambda-Experimente oder arguments-Array (ersetzt durch Rest-Operator).
+🔹 Block 3: Komplexe Datenstrukturen (Objekte & Arrays)
+(Umfang: 1 SWS Vorlesung + 1 SWS Übung)
+
+3.1 Objektorientierung mit der class-Syntax
+Objekte als Schlüssel-Wert-Speicher (JSON-Notation)
+Modernes Klassenkonzept: class, constructor, Instanzvariablen
+Methoden, Getter / Setter & Private Felder (#privateField)
+Vererbung mit extends und super
+Entfall: Keine ES5-Funktions-Konstruktoren (function Person() { this.name = ... }).
+3.2 Arrays & Funktionaler Programmierstil
+Arrays erstellen (Array-Literale [])
+Moderne Array-Methoden zur Datenverarbeitung:
+map() (Transformieren)
+filter() (Filtern)
+reduce() (Aggregieren)
+find() / findIndex() / includes()
+Destructuring Assignment für Objekte & Arrays (const { name, age } = user;)
+Spread-Operator (...array) zum Kopieren und Zusammenfügen
+🔹 Block 4: DOM-Manipulation & Modernes Event-Handling
+(Umfang: 1 SWS Vorlesung + 1 SWS Übung)
+
+4.1 Die DOM-Baumstruktur & Selektion
+Das Document Object Model: Dokument-, Element- und Textknoten
+Gezieltes Selektieren: querySelector() und querySelectorAll()
+Traversierung im Baum: parentElement, children, closest()
+Entfall: Keine Vorgehensweisen mit document.write() oder alten getElementsByName-Tricks.
+4.2 Dynamische DOM-Manipulation
+Elemente erstellen und einfügen: createElement(), append(), prepend(), insertAdjacentHTML()
+Klassen und Stile dynamisch steuern: element.classList.add(), .remove(), .toggle()
+Dateneigenschaften auslesen/schreiben über Data-Attribute (dataset)
+4.3 Modernes Event handling
+Event-Listener registrieren: element.addEventListener('click', handler)
+Event-Objekt (event.target, event.preventDefault())
+Event-Flow: Event Bubbling & Capturing
+Event Delegation (Effiziente Event-Steuerung an übergeordneten Elementen)
+Entfall: Keine Inline-Eventhandler (onclick="" im HTML).
+🔹 Block 5: Asynchrone Programmierung & Fetch API
+(Umfang: 1 SWS Vorlesung + 1 SWS Übung)
+
+5.1 Grundlagen der Asynchronität
+Synchroner vs. Asynchroner Code
+Die JavaScript Event Loop & der Task-Queue-Mechanismus
+Einführung in Promises (Pending, Fulfilled, Rejected)
+5.2 HTTP-Anfragen mit der fetch()-API
+Daten abrufen mit fetch(url)
+HTTP-Methoden (GET, POST, PUT, DELETE) & Request-Header konfigurieren
+Verarbeiten von JSON-Antworten (response.json())
+Entfall: Vollständiger Verzicht auf XMLHttpRequest (XHR) und jQuery.ajax().
+5.3 Modernes Asynchrones Schreiben mit async / await
+Syntax von async function und await
+Elegante Fehlerbehandlung mit try ... catch-Blöcken
+Parallele Anfragen mit Promise.all()
+🔹 Block 6: Clientseitige Speicherung, Web APIs & KI-Integration
+(Umfang: 1 SWS Vorlesung + 1 SWS Übung)
+
+6.1 Formularverarbeitung & Validierung
+Formular-Ereignisse (submit, input, change)
+Die FormData-API zur einfachen Datenextraktion
+Native Formularvalidierung (Constraint Validation API)
+6.2 Clientseitige Datenhaltung
+localStorage (Persistente Daten) & sessionStorage (Sitzungsdaten)
+Daten-Serialisierung und -Deserialisierung mit JSON.stringify() & JSON.parse()
+Entfall: Cookies nur kurz als historischer Kontext.
+6.3 Ausblick: Modulsysteme & Modernes Tooling
+ES-Module: export und import zur Code-Strukturierung
+Übersicht über moderne Web APIs (z. B. Geolocation, Canvas, Web Storage)
+KI-gestützte Entwicklung (Spec-Driven Development / SDD): Wie KI-Tools (z. B. Antigravity, Cursor) beim Generieren, Refaktoren und Testen von JavaScript unterstützen.
+
+
