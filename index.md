@@ -4801,14 +4801,18 @@ width: 30%;}}
 ![bg](img/media_queries_3.jpg)
 
 ---
+<!--_class: structural -->
+# KI Workflows (Future of Development)
 
-### Handwerkliche Kodierung (Status Quo):
+---
+
+## Handwerkliche Kodierung (Status Quo):
 Softwareentwicklung als zeilenweises Schreiben von Syntax; Fokus auf Implementierungsdetails und das Beheben von Syntax fehlern.
 
-### KI-gestützte Orchestrierung (Zukunft):
+## KI-gestützte Orchestrierung (Zukunft):
 Der Entwickler agiert als „Dirigent“ (Orchestrator), der Anforderungen definiert, KI-Modelle steuert und deren Ergebnisse validiert.
 
-### Kernkompetenz:
+## Kernkompetenz:
 Die Fähigkeit zur präzisen Problemformulierung und Systemintegration ersetzt das reine Auswendiglernen von Programmiersprachen.
 
 ---
@@ -4827,10 +4831,8 @@ Menschliche Rolle: Der Entwickler fungiert als „Digital Shepherd“ (Hirte), d
 ## KI-native Entwicklungsumgebungen
 ### Vom Texteditor zur intelligenten Plattform
 
----
-
 ### Werkzeugwechsel:
-Übergang von klassischen Editoren (wie Notepad++) zu KI-nativen Umgebungen (z. B. Cursor), die Kontext über das gesamte Projekt verstehen.
+Übergang von klassischen Editoren (wie Notepad++) zu KI-nativen Umgebungen (z. B. Cursor oder Antigravity), die Kontext über das gesamte Projekt verstehen.
 
 ### Kontextbewusstsein:
 Nutzung von agentischen Regeln und ähnlichen Konfigurationen, um der KI projekt-spezifische Architekturregeln beizubringen.
@@ -4839,19 +4841,124 @@ Nutzung von agentischen Regeln und ähnlichen Konfigurationen, um der KI projekt
 KI-gestützte Identifikation von „Code Smells“ und automatische Optimierung auf moderne Standards.
 
 ---
+<!-- _class: structural -->
+### Eine Unterseite erstellen (09)
+
+Nun wollen wir auf Basis der index html in möglichst kurzer Zeit eine Unterseite erstellen, die "HomeSweetHome" heißt.
+Statt manuell Texte zu kopieren und html-Tags zu schreiben, soll die KI das für uns erledigen!
+
+---
+
+ Kopieren sie nun folgende Dateien in den img-Ordner:
+- dasBuero.jpg
+- dasFuehrerHaus.jpg
+- dieGarage.jpg
+- dieSanitaerenAnlagen.jpg
+- dieWerkstatt.jpg
+- maiksLKWaussen.jpg
+- willkommenInDerKueche.jpg
+- wohnenUndSchlafen.jpg
+- und den gesamten Ordner "1600"!
+
+---
+### Antigravity oder Cursor
+
+Installiert / wählt  ein Tool Eurer Wahl und meldet Euch entsprechend an:
+- Cursor
+https://cursor.com/de/home
+- Antigravity IDE
+https://antigravity.google/product/antigravity-ide
 
 
+Meine Wahl ist Antigravity, da ich ein registriertes Google-Konto mit Altersbestätigung besitze.
 
+---
+### Arbeiten in Antigravity
+Öffnet Euch in Antigravity doch mal den Projektordner (09)
+Analysiert die Projektstruktur
+und die Tools der Software:
+- Explorer
+- Inhaltsfenster
+- Agent
+
+![bg right:40%](img/09_antigravity_01.jpg)
+
+---
+<!-- _class: fullscreen -->
+
+![bg](img/09_antigravity_02.jpg)
 
 ---
 
 
-# Der fundamentale Paradigmenwechsel
-## Vom manuellen Kodieren zur KI-gestützten Orchestrierung
+Erstellt nun einen detaillierten Prompt,
+oder kopiert den Prompt aus meiner
+Datei prompt.txt (im Materialordner)
+in das "Agent-Fenster" von Antigravity.
 
-Quelle:
-(IJACSA) International Journal of Advanced Computer Science and Applications, Vol. 16, No. 11, 2025
+> Lest Euch Euren Prompt mehrmals durch!
 
-**"AI in Web Development: A Comparative Study of
-Traditional Coding and LLM-Based Low-Code
-Platforms"**
+
+![bg right:40%](img/09_antigravity_03.jpg)
+
+---
+> Dann: Feuer frei!
+
+Allow read access to this path? (mehrfach)
+Allow running this command?
+Accept all
+
+---
+<!-- _class: fullscreen -->
+
+![bg](img/09_antigravity_04.jpg)
+
+---
+
+<!-- _class: structural -->
+> Fertig ist die Unterseite!
+
+Überprüfen der Inhalte
+Testen der Verlinkungen
+Lesen der Inhalte
+
+![bg right:40%](img/09_antigravity_05.jpg)
+
+---
+### Sub-Navigation
+
+Die Seite ist nun serh lang geworden. Wir müssen die Inhalte der Unterseite also über eine Sub-Navigation anspringen können.
+
+Erstellt Euch dafür einen Prompt:
+
+"Erstelle im main-Bereich eine Liste mit einer Subnavigation.
+Die Liste soll gut lesbarer Text in schwarz auf weißem Grund sein und den style der Klasse "subnavi" in der "style.css" haben. Die Texte sollen keinen List-Style haben, sondern stattdessen mit schwarz-gepunkteten Linien horizontal abgegrenzt werden.
+Jeder Punkt der Subnavi soll dann einen entsprechenden Anchor der h2-Überschriften in den Articlen anspringen. Erstelle unter jedem Article einen Link "nach oben" zur Subnavigation. Der Inhalt der Navigation sollen die h2-Überschriften der einzelnen Article sein."
+
+---
+<!-- _class: fullscreen-->
+
+![bg](img/09_antigravity_06.jpg)
+
+---
+<!-- _class: structural-->
+## KI ist geil?
+
+Erstellt Euch mit eigenen Bildern, Texten und Beispielen aus dem Internet eine eigene Webseite.
+Gebt der KI ausreichend Content und die passenden Prompts.
+- Beispielseiten
+- Bilder
+- eigenen Texte (auch KI-generiert)
+- Responsive-Design
+- mobile-fähig und barrierefrei
+- ...
+
+---
+
+Denkt daran: 
+> "Computer machen uns nicht arbeitslos, aber sie verändern unseren Arbeitsalltag stark. Neue Technik nimmt uns viele schwere oder langweilige Aufgaben ab."
+
+Zitat von Bill Gates
+
+---
+# Javascript Grundlagen
