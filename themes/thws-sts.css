@@ -638,6 +638,19 @@ section.vielText pre {
   font-size: var(--tiny);
 }
 
+/* -------------------- CLASS: vielText2-------------------------------*/
+
+section.vielText2 {
+  background-color: var(--background-color);
+  padding-left: 80px;
+
+}
+
+section.vielText2 p,
+section.vielText ul li,
+{
+padding-right: 120px;
+}
 
 /* -------------------- CLASS: img-right-------------------------------*/
 

@@ -4,7 +4,7 @@ theme: thws-sts
 paginate: true
 header: '**Webprogrammierung** <br> THWS Modul-Nr: 6322170'
 math: mathjax
-footer: '[zurück zur Übersicht](../index.md)'
+footer: '[zurück zur Übersicht](../index.html)'
 ---
 
 <!-- _class: titlepage -->

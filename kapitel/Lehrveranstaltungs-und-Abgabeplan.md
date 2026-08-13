@@ -4,7 +4,7 @@ theme: thws-sts
 paginate: true
 header: '**Webprogrammierung** <br> THWS Modul-Nr: 6322170'
 math: mathjax
-footer: '[zurück zur Übersicht](index.md)'
+footer: '[zurück zur Übersicht](../index.html)'
 ---
 
 <!-- _class: titlepage -->
@@ -31,7 +31,7 @@ footer: '[zurück zur Übersicht](index.md)'
 - 🔴 **Abgabe 4 (25 Pkt.):** 19.01.2027 – `sdd-protokoll.md` & Live-Verteidigung
 
 ---
-<!-- _class: vielText -->
+<!-- _class: vielText vielText2 -->
 
 ## Lehr- & Abgabeplan: Teil 1 (Termine 01 – 04)
 
@@ -43,7 +43,7 @@ footer: '[zurück zur Übersicht](index.md)'
 | **04** <br> `03.11.2026` | **CSS3 Grundlagen & Box-Modell:** Selektoren, Kaskade, Margin, Border, Padding, Box-Sizing. | Styling von *Maiks Seite* mit Schriften, Farben & Box-Abständen. | 🟢 **ABGABE 1 (15 Pkt.) bis 23:59 Uhr:** <br> *Konzept, Wireframes & SDD-Spec (Spec-Driven Development = maschinenlesbare, präzise Spezifikation → spec.md)* |
 
 ---
-<!-- _class: vielText -->
+<!-- _class: vielText vielText2 -->
 
 ## Lehr- & Abgabeplan: Teil 2 (Termine 05 – 08)
 
@@ -55,7 +55,7 @@ footer: '[zurück zur Übersicht](index.md)'
 | **08** <br> `01.12.2026` | **Code-Cleanliness & Validierung:** W3C-HTML/CSS-Validierung, CSS-Refactoring, Clean Code. | Fehlerbehebung, W3C-Validierung und Refactoring des HTML/CSS-Codes. | 🔵 **ABGABE 2 (25 Pkt.) bis 23:59 Uhr:** <br> *HTML5 & CSS3 Rohentwurf (Responsive)* |
 
 ---
-<!-- _class: vielText -->
+<!-- _class: vielText vielText2-->
 
 ## Lehr- & Abgabeplan: Teil 3 (Termine 09 – 11)
 
@@ -67,7 +67,7 @@ footer: '[zurück zur Übersicht](index.md)'
 | *--* | *23.12.26 – 06.01.27* | *-- WEIHNACHTSPAUSE (Weiterarbeit am Portfolio) --* | *--* |
 
 ---
-<!-- _class: vielText -->
+<!-- _class: vielText vielText2 -->
 
 ## Lehr- & Abgabeplan: Teil 4 (Termine 12 – 13)
 
@@ -76,15 +76,4 @@ footer: '[zurück zur Übersicht](index.md)'
 | **12** <br> `12.01.2027` | **Formulare, Storage & Dateihandling:** FormData API, Validierung (checkValidity()), localStorage, Blob/FileReader. | Formular validieren & Daten lokal speichern oder als .geojson herunterladen. | 🟡 **ABGABE 3 (35 Pkt.) bis 23:59 Uhr:** <br> *JS, DOM, Fetch API, Formular & Geodaten* |
 | **13** <br> `19.01.2027` | **Portfolio-Abschluss & Kolloquium:** Digital Shepherd Auditing, Code-Verteidigung & Reflektion. | Präsentation der Portfolios, Abnahme der SDD-Dokumentation. | 🔴 **ABGABE 4 (25 Pkt.) im Unterricht:** <br> *SDD-Protokoll (sdd-protokoll.md) & Live-Verteidigung* |
 
----
-<!-- _class: vielText -->
 
-## Notenschlüssel & Abgabe-Kriterien (100 Pkt. Gesamt)
-
-| Teilabgabe | Gewichtung | Kernanforderungen & Bewertung |
-| :--- | :---: | :--- |
-| **Abgabe 1 (03.11.26)** | **15 Pkt.** | Wireframes (Mobile/Desktop), Design System, Sitemap, SDD-Spec (spec.md). |
-| **Abgabe 2 (01.12.26)** | **25 Pkt.** | Semantisches HTML5, Flexbox/Grid Layout, Mobile First, Impressum & DSGVO. |
-| **Abgabe 3 (12.01.27)** | **35 Pkt.** | Hamburger-Menü, GeoJSON/Fetch API, Formularvalidierung, localStorage/Blob. |
-| **Abgabe 4 (19.01.27)** | **25 Pkt.** | SDD-Protokoll (sdd-protokoll.md - 15 Pkt.) + Live-Code-Verteidigung (10 Pkt.). |
-| **GESAMT** | **100 Pkt.** | **100–95 Pkt: 1,0 \| ... \| 94–90 Pkt: 1,3 \| ... \| 50 Pkt: 4,0 \| <50 Pkt: 5,0** |
