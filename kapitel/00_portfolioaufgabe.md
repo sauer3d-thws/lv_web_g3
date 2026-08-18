@@ -35,6 +35,7 @@ footer: '[zurück zur Übersicht](../index.html)'
 | 🟡 **3. JavaScript & Geodaten** | **35 Pkt.** | DOM-Events, Async Fetch, GeoJSON/Leaflet, Formular & Storage | **12.01.2027** |
 | 🔴 **4. Doku & Verteidigung** | **25 Pkt.** | SDD-Prompt-Protokoll (`sdd-protokoll.md`) & 5-Min-Kolloquium | **19.01.2027** |
 
+
 ---
 <!-- _class: vielText vielText2-->
 
@@ -57,6 +58,65 @@ footer: '[zurück zur Übersicht](../index.html)'
 ---
 <!-- _class: vielText vielText2-->
 
+### Was kann Inhalt Ihrer Portfolio-Webseite sein?
+
+- **Themenvielfalt – Studium & Persönliches:**
+  - **Akademisch / Fachlich:** Arbeiten & Karten aus dem Studium der Geovisualisierung, GIS-Analysen, Web-Projekte, 3D-Visualisierungen oder thematische Facharbeiten.
+  - **Persönlich / Hobbies:** Eigene Interessen (z. B. Fotografie-Showcase, Reiseberichte & Outdoor-Touren, Sport, Musik, kreative Hobbys oder Ehrenamt).
+- **Darstellungsmöglichkeiten & Formate:**
+  - **Projekt-Galerie / Showcase:** Kartenbasierte oder rasterförmige Teaser mit Filterfunktion und Detailansichten.
+  - **Interaktives Storytelling:** Verbindung von Reiserouten/POI-Daten mit Bildern, Texten und GeoJSON-Punkten.
+  - **Über-mich-Bereich:** Kurzprofil, Skill-Matrix, Ausbildungsstationen und Kontaktformular.
+
+---
+<!-- _class: vielText vielText2-->
+
+## Beispiel-Aufbau einer `spec.md`
+
+```markdown
+# Spezifikation: Geo-Portfolio [Ihr Name]
+
+## 1. Projektübersicht & Persona
+- **Ziel:** Responsive Webpräsenz zur Präsentation von Geovisualisierungs-Projekten & Hobbies.
+- **Zielgruppe:** Zukünftige Arbeitgeber, Fachkolleg:innen, Geodaten-Interessierte.
+
+## 2. Seitenstruktur & Sitemap (mind. 3 Unterseiten)
+- `index.html`: Hero-Bereich, Teaser der Top-Arbeiten, Call-to-Action, semantischer Footer.
+- `projekte.html`: Filterbare Projekt-Galerie + Leaflet-Karte mit GeoJSON-Punkten / POIs.
+- `kontakt.html`: Barrierefreies Kontaktformular mit JS-Validierung & Impressum (§5 DDG).
+
+## 3. Design-System & Tokens
+- **Farben:** Primary `#0a3d62`, Accent `#e67e22`, Background `#f8f9fa`, Text `#2c3e50`.
+- **Typografie:** Headings: `Inter` (lokal), Body: `Roboto` (lokal, DSGVO-konform).
+- **Layout & Breakpoints:** Mobile-First, Breakpoints bei `480px` und `768px`.
+
+## 4. Geodaten & Interaktion (Meilenstein 3)
+- GeoJSON: Eigene Projekt-Standorte / POIs mit Popups und interaktivem Filter.
+- Formular & Storage: Speichern von Einstellungen/Favoriten im `localStorage`.
+```
+
+---
+
+- **Recherche & Inspiration im Netz:**
+  - Recherchieren Sie aktiv nach modernen Beispielen und Vorbildern (z. B. auf *Dribbble*, *Awwwards*, *GitHub Pages Portfolios*, *Behance* oder *CodePen*).
+  - Analysieren Sie: *Welche Navigationen, Farbschemata und Typografien wirken ansprechend und modern?*
+  - Dokumentieren Sie Ihre Recherche im spec.md
+
+---
+
+## Checkliste Meilenstein 1
+
+- [x] **Sitemap & Inhaltskonzept:** Mindestens 3 logisch verknüpfte Unterseiten definiert (z. B. *Startseite*, *Projekte/Karte*, *Über mich/Kontakt*).
+- [x] **Recherche & Best Practices:** Analyse und Dokumentation von 2–3 inspirierenden Webseiten / Vorbildern im Netz.
+- [x] **Wireframes (Mobile & Desktop):** Strukturierte Layout-Skizzen für Smartphone- und Desktop-Ansichten erstellt und beigelegt.
+- [x] **Design-System:** Farbpalette (Hex/HSL), Schrifthierarchie (z. B. Google Fonts) und Bildsprache festgelegt.
+- [x] **`spec.md` (SDD-Spezifikation):** Vollständig ausgefüllte Spezifikation mit Anforderungen, Datenstrukturen und Zieldefinitionen im Projekt-Repository.
+
+
+
+---
+<!-- _class: vielText vielText2-->
+
 ## 🔵 Meilenstein 2: HTML5 Semantik, CSS3 Layout & Rechtliches (25 Pkt.)
 
 ### Ziel: Vollständiges, responsive Webseiten-Gerüst (ohne JavaScript!)
@@ -72,6 +132,14 @@ footer: '[zurück zur Übersicht](../index.html)'
 - **Medien, Barrierefreiheit & Rechtliches (10 Pkt.):**
   - Pflicht: Barrierefreie `alt`-Attribute für alle Bilder.
   - Impressumspflicht nach §5 DDG & DSGVO-Konformität (z. B. Google Fonts **lokal** einbinden).
+
+---
+
+## Checkliste Meilenstein 2
+
+- [x] **HTML5-Semantik:** Eindeutiger Einsatz semantischer Tags (`<header>`, `<nav>`, `<main>`, `<article>`, `<section>`, `<aside>`, `<footer>`).
+- [x] **Handgeschriebenes CSS3 & Responsive Design:** Flexbox/Grid, Mobile-First-Ansatz mit mindestens 2 Media Queries und CSS-Variablen implementiert.
+- [x] **Medien, Barrierefreiheit & Rechtliches:** Barrierefreie `alt`-Attribute, Impressumspflicht nach §5 DDG und DSGVO-Konformität (z. B. Google Fonts **lokal** eingebunden).
 
 ---
 <!-- _class: vielText vielText2-->
@@ -91,6 +159,15 @@ footer: '[zurück zur Übersicht](../index.html)'
 - **State Management / Persistence (5 Pkt.):**
   - Speichern von Nutzer-Preferences (z. B. Dark Mode / Karten-Filter) in `localStorage
   **ODER** GeoJSON-Export per Blob API.
+
+---
+
+## Checkliste Meilenstein 3
+
+- [x] **DOM-Manipulation & Event-Handling:** Interaktives Mobil-Menü und mindestens 1 weiteres dynamisches Event implementiert.
+- [x] **Asynchrone Daten & Geodaten-Anbindung:** Interaktive OpenStreetMap-Karte und asynchrones Laden einer GeoJSON-Datei per `fetch()` & `async/await` mit dynamischen Popups.
+- [x] **Formularverarbeitung & Validierung:** Kontakt- oder Datenformular mit nativer JS-/HTML5-Validierung.
+- [x] **State Management / Persistence:** Speichern von Nutzer-Preferences in `localStorage` oder GeoJSON-Export per Blob API.
 
 ---
 <!-- _class: vielText vielText2-->
