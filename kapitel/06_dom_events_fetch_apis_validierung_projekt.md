@@ -398,7 +398,6 @@ todoList.addEventListener('click', (event) => {
 - **Synchroner Ablauf (Problem):**
   - Befehle werden streng nacheinander ausgeführt.
   - Beim Laden großer Dateien (z. B. 5 MB GeoJSON) **blockiert** der gesamte Browser: Die Webseite friert ein, Buttons reagieren nicht mehr!
-
 - **Asynchroner Ablauf (Lösung):**
   - Der Browser fordert die Datei im Hintergrund an.
   - Die Webseite bleibt sofort bedienbar und flüssig.

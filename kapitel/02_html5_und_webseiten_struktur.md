@@ -803,7 +803,7 @@ https://mongoose.ws/binary/
 - **Einflussfaktoren:** Display-Größe (Mobil bis Desktop), Betriebssystem, Auflösung, installierte Schriften, Benutzereinstellungen.
 - **Paradigmenwechsel beim Design:**
   - *Früher:* Der starre Versuch, Webseiten überall exakt identisch aussehen zu lassen („Pixel-Perfect“).
-  - *Heute:* **Responsive & Adaptive Webdesign** (Layouts fließen und passen sich dynamisch an).
+  - *Heute:* **Responsive & Adaptive Web** (Layouts fließen dynamisch).
 
 ![fluid-layout](../img/fluid-layout.png)
 
@@ -905,13 +905,19 @@ https://mongoose.ws/binary/
 <!-- _class: img-right -->
 
 ### Was du mit den DevTools machen kannst:
-- **HTML & CSS inspizieren:** Live-Änderungen am Layout vornehmen und sofort sehen, wie sich das Design verändert.
-- **Performance messen:** Ladezeiten analysieren und Optimierungspotenziale identifizieren.
-- **Netzwerkverkehr beobachten:** Alle Anfragen an den Server verfolgen und prüfen, ob alle Ressourcen korrekt geladen werden.
-- **JavaScript-Code debuggen:** Fehler im Skript finden und die Ausführung schrittweise nachvollziehen.
-- **Mobile Ansichten simulieren:** Testen, wie die Webseite auf unterschiedlichen Gerätegrößen und Auflösungen aussieht.
+- **HTML & CSS inspizieren:** Live-Änderungen am Layout vornehmen & sofort sehen, wie sich das Design verändert.
+- **Performance messen:** Ladezeiten analysieren & Optimierungspotenziale identifizieren.
+- **Netzwerkverkehr beobachten:** Alle Anfragen an den Server verfolgen & prüfen, ob alle Ressourcen korrekt geladen werden.
 
 ![devtools](../img/devtools.jpg)
+
+---
+
+- **JavaScript-Code debuggen:** Fehler im Skript finden &
+die Ausführung schrittweise nachvollziehen.
+- **Mobile Ansichten simulieren:** Testen, wie die Webseite auf
+unterschiedlichen Gerätegrößen & Auflösungen aussieht.
+
 
 ---
 <!-- _class: img-right -->
@@ -919,7 +925,7 @@ https://mongoose.ws/binary/
 ### 1. Elemente (Elements)
 - **Das DOM inspizieren:** Zeigt den aktuellen Zustand des **DOM (Document Object Model)** an – also die Live-Baumstruktur aller HTML-Elemente.
 - **Live-Editing:** Ermöglicht das temporäre Bearbeiten von HTML-Tags, Attributen und Texten direkt im Browser.
-- **CSS-Entwicklung:** Stylesheets einsehen, Regeln an- und ausschalten oder neue CSS-Eigenschaften live testen.
+- **CSS-Entwicklung:** Stylesheets einsehen, Regeln an- & ausschalten / neue CSS-Eigenschaften live testen.
 
 ![devtools-elements](../img/devtools-elements.jpg)
 
@@ -992,7 +998,8 @@ https://mongoose.ws/binary/
 
 ### Formatierung von Webseiten mit CSS: Einführung
 - **Früher: Vermischung von Inhalt und Design**
-  - Jedes HTML-Element erhielt direkte Formatierungsanweisungen (z. B. `<font color="red">` oder `<b>`).
+  - Jedes HTML-Element erhielt direkte Formatierungsanweisungen
+  (z. B. `<font color="red">` oder `<b>`).
   - Dies führte zu unlesbarem Code und enormem Pflegeaufwand bei großen Websites.
 - **Heute: Separation of Concerns (Trennung der Zuständigkeiten)**
   - **HTML** beschreibt ausschließlich die **Struktur & Semantik** (z. B. Überschriften, Absätze).
@@ -1433,9 +1440,9 @@ http://localhost/
 <!-- _class: img-right -->
 
 - Um die eigene Webseite anzuzeigen:
--> in das entsprechende Verzeichnis wechseln
+-> in entsprechendes Verzeichnis
 
-Zur Versionierung der Daten > fortlaufende Nummerierung der Verzeichnisse:
+Versionierung der Daten > Nummerierung der Verzeichnisse:
 http://localhost/maiks-mobiler-service/01/
 
 - Chrome zeigt unsere erste Webseite an.
@@ -1688,8 +1695,8 @@ Für sprachliche Betonung:
 ---
 <!-- _class: img-right -->
 
-Ihre Text-Inhalte fügen Sie nun nach dem Bild ein:
-Den Vorlagetext findet Ihr im material-Ordner in der Datei:
+Ihre Text-Inhalte fügt Ihr nun nach dem Bild ein:
+Den Vorlagetext findet Ihr im Mterial-Ordner in der Datei:
 
 **HomeSweetHome.txt**
 
@@ -1794,8 +1801,8 @@ beim Speichern automatisch formatiert wird.
   suchen und aktivieren.
   3. Prettier als Standard-Formatierer festlegen.
 - **Vorteil**: Garantiert saubere Einrückungen
-und einheitlichen Code beiDreamteam html & css (03)
-jedem Speichern (`Strg + S`).
+und einheitlichen Code beiDreamteam
+html & css (03) bei jedem Speichern (`Strg + S`).
 
 ![bg right:50%](../img/vscode_prettier.jpg)
 
@@ -1917,14 +1924,27 @@ das Zauberwort
 
 **Vererbung in CSS (Inheritance)**
 
-- **Grundprinzip**: CSS-Regeln für ein Element gelten für alle Instanzen dieses Elements auf der Webseite (z. B. Schriftart für alle `<p>`-Elemente).
-- **Definition**: Vererbung ist die Übertragung von Eigenschaften von übergeordneten (Eltern-) Elementen auf untergeordnete (Kinder-) Elemente.
-- **Vorteil**: Vermeidung redundanter CSS-Regeln – Layouts können effizient an zentraler Stelle gepflegt werden.
+- **Grundprinzip**: CSS-Regeln für ein Element
+gelten für alle Instanzen dieses Elements auf
+der Webseite
+(z. B. Schriftart für alle `<p>`-Elemente).
+- **Definition**: Vererbung ist die Übertragung
+von Eigenschaften von übergeordneten
+(Eltern-) Elementen auf
+untergeordnete (Kinder-) Elemente.
+- **Vorteil**: Vermeidung redundanter CSS-Regeln
+ Layouts können effizient an zentraler Stelle
+gepflegt werden.
+
+![bg right:50%](../img/css_inheritance_diagram.png)
+
+---
+
 - **Vererbte vs. nicht-vererbte Eigenschaften**:
   - *Vererbt*: Text- und Schrifteigenschaften (z. B. `font-family`, `color`, `line-height`).
   - *Nicht vererbt*: Layout- und Box-Eigenschaften (z. B. `margin`, `padding`, `border`, `background-color`).
 
-![bg right:50%](../img/css_inheritance_diagram.png)
+
 
 ---
 **Praxisaufgabe:**

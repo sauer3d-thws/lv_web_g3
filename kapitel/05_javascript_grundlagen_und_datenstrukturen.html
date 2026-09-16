@@ -503,7 +503,8 @@ Platziere externe Skripte im &lt;head&gt; und nutze immer defer!</p>
 </li>
 <li><strong><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Entfall: Kein <code>var</code> mehr nutzen!</strong>
 <ul>
-<li><code>var</code> hat keinen Block-Scope und leidet unter <em>Hoisting</em> (Hochziehen von Variablen). Führt in der Praxis zu schwer auffindbaren Bugs.</li>
+<li><code>var</code> hat keinen Block-Scope und leidet unter <em>Hoisting</em> (Hochziehen von Variablen).<br />
+Führt in der Praxis zu schwer auffindbaren Bugs.</li>
 </ul>
 </li>
 </ul>
@@ -662,10 +663,10 @@ Deine Punkte: <span class="hljs-subst">${punkte}</span>`</span>;
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 <h3 id="vorher-vs-nachher--konkatenation-vs-backticks">Vorher vs. Nachher: <code>+</code>-Konkatenation vs. Backticks</h3>
 <ul>
-<li><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> <strong>Veraltet (unübersichtliche <code>+</code>-Verknüpfung):</strong><pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"><span class="hljs-keyword">const</span> info = <span class="hljs-string">&quot;User: &quot;</span> + vorname + <span class="hljs-string">&quot; &quot;</span> + namename + <span class="hljs-string">&quot; (&quot;</span> + alter + <span class="hljs-string">&quot; Jahre)&quot;</span>;
+<li><strong>Veraltet (unübersichtliche <code>+</code>-Verknüpfung):</strong><pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"><span class="hljs-keyword">const</span> info = <span class="hljs-string">&quot;User: &quot;</span> + vorname + <span class="hljs-string">&quot; &quot;</span> + namename + <span class="hljs-string">&quot; (&quot;</span> + alter + <span class="hljs-string">&quot; Jahre)&quot;</span>;
 </code></pre>
 </li>
-<li><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Modern &amp; Sauber (Template Literals):</strong><pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"><span class="hljs-keyword">const</span> info = <span class="hljs-string">`User: <span class="hljs-subst">${vorname}</span> <span class="hljs-subst">${namename}</span> (<span class="hljs-subst">${alter}</span> Jahre)`</span>;
+<li><strong>Modern &amp; Sauber (Template Literals):</strong><pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"><span class="hljs-keyword">const</span> info = <span class="hljs-string">`User: <span class="hljs-subst">${vorname}</span> <span class="hljs-subst">${namename}</span> (<span class="hljs-subst">${alter}</span> Jahre)`</span>;
 </code></pre>
 </li>
 </ul>
@@ -703,7 +704,8 @@ Deine Punkte: <span class="hljs-subst">${punkte}</span>`</span>;
 </code></pre>
 <ul>
 <li><strong>Ablauf:</strong> Bedingungen werden sequenziell von oben nach unten geprüft.</li>
-<li><strong>Logik:</strong> Sobald eine Bedingung <code>true</code> ergibt, wird dieser Block ausgeführt und der Rest übersprungen.</li>
+<li><strong>Logik:</strong> Sobald eine Bedingung <code>true</code> ergibt, wird dieser Block ausgeführt<br />
+und der Rest übersprungen.</li>
 </ul>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
 </section>
@@ -976,13 +978,13 @@ Code und dessen Funktion lesen und verstehen.</p>
 <ul>
 <li><strong>Function Declaration (Klassische Funktion):</strong>
 <ul>
-<li>Wird per <em>Hoisting</em> an den Anfang des Scopes gezogen -&gt; vor ihrer Deklaration aufrufbar.</li>
+<li>Wird per <em>Hoisting</em> an den Anfang des Scopes gezogen<br />
+-&gt; vor ihrer Deklaration aufrufbar.</li>
 </ul>
 </li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript"> <span class="hljs-keyword">function</span> <span class="hljs-title function_">gruss</span>(<span class="hljs-params">name</span>) {
-     <span class="hljs-keyword">return</span> <span class="hljs-string">`Hallo <span class="hljs-subst">${name}</span>!`</span>;
- }
+     <span class="hljs-keyword">return</span> <span class="hljs-string">`Hallo <span class="hljs-subst">${name}</span>!`</span>;}
 </code></pre>
 <ul>
 <li><strong>Function Expression (Funktionsausdruck):</strong>
@@ -992,8 +994,7 @@ Code und dessen Funktion lesen und verstehen.</p>
 </li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-javascript">  <span class="hljs-keyword">const</span> gruss = <span class="hljs-keyword">function</span>(<span class="hljs-params">name</span>) {
-      <span class="hljs-keyword">return</span> <span class="hljs-string">`Hallo <span class="hljs-subst">${name}</span>!`</span>;
-  };
+      <span class="hljs-keyword">return</span> <span class="hljs-string">`Hallo <span class="hljs-subst">${name}</span>!`</span>;};
 </code></pre>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
 </section>
@@ -1066,7 +1067,8 @@ Expressions folgen den normalen Variablen-Regeln (<em>const</em>).</p>
 </li>
 <li><strong>Was ist eine Closure (Funktionsabschluss)?</strong>
 <ul>
-<li>Eine innere Funktion hat Zugriff auf Variablen ihres <strong>äußeren Entstehungs-Scopes</strong> – selbst nachdem die äußere Funktion beendet ist!</li>
+<li>Eine innere Funktion hat Zugriff auf Variablen ihres <strong>äußeren Entstehungs-Scopes</strong>,<br />
+selbst nachdem die äußere Funktion beendet ist!</li>
 </ul>
 </li>
 </ul>
@@ -1100,8 +1102,8 @@ Expressions folgen den normalen Variablen-Regeln (<em>const</em>).</p>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Hoisting</strong></td>
-<td style="text-align:left"><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Ja (überall aufrufbar)</td>
-<td style="text-align:left"><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Nein (erst nach Zeile verfügbar)</td>
+<td style="text-align:left">Ja (überall aufrufbar)</td>
+<td style="text-align:left">Nein (erst nach Zeile verfügbar)</td>
 </tr>
 <tr>
 <td style="text-align:left"><strong><code>this</code>-Bindung</strong></td>
@@ -1110,8 +1112,8 @@ Expressions folgen den normalen Variablen-Regeln (<em>const</em>).</p>
 </tr>
 <tr>
 <td style="text-align:left"><strong>Impliziter Return</strong></td>
-<td style="text-align:left"><img class="emoji" draggable="false" alt="❌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/274c.svg" data-marp-twemoji=""/> Nein (benötigt <code>return</code>)</td>
-<td style="text-align:left"><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.3/assets/svg/2705.svg" data-marp-twemoji=""/> Ja (bei Einzeiler ohne <code>{}</code>)</td>
+<td style="text-align:left">Nein (benötigt <code>return</code>)</td>
+<td style="text-align:left">Ja (bei Einzeiler ohne <code>{}</code>)</td>
 </tr>
 </tbody>
 </table>

@@ -341,7 +341,8 @@ document.getElementById('addBtn').addEventListener('click', () => {
   - Für Variablen, deren Wert sich **später ändert** (z. B. Zähler in Schleifen).
   - Gültig nur im jeweiligen Code-Block (*Block Scope* `{ ... }`).
 - **❌ Entfall: Kein `var` mehr nutzen!**
-  - `var` hat keinen Block-Scope und leidet unter *Hoisting* (Hochziehen von Variablen). Führt in der Praxis zu schwer auffindbaren Bugs.
+  - `var` hat keinen Block-Scope und leidet unter *Hoisting* (Hochziehen von Variablen).
+  Führt in der Praxis zu schwer auffindbaren Bugs.
 
 ---
 ### Was ist Hoisting ("Hochziehen")?
@@ -463,11 +464,11 @@ Deine Punkte: ${punkte}`;
 ---
 ### Vorher vs. Nachher: `+`-Konkatenation vs. Backticks
 
-- ❌ **Veraltet (unübersichtliche `+`-Verknüpfung):**
+- **Veraltet (unübersichtliche `+`-Verknüpfung):**
   ```javascript
   const info = "User: " + vorname + " " + namename + " (" + alter + " Jahre)";
   ```
-- ✅ **Modern & Sauber (Template Literals):**
+- **Modern & Sauber (Template Literals):**
   ```javascript
   const info = `User: ${vorname} ${namename} (${alter} Jahre)`;
   ```
@@ -503,7 +504,8 @@ if (alter >= 18) {
 ```
 
 - **Ablauf:** Bedingungen werden sequenziell von oben nach unten geprüft.
-- **Logik:** Sobald eine Bedingung `true` ergibt, wird dieser Block ausgeführt und der Rest übersprungen.
+- **Logik:** Sobald eine Bedingung `true` ergibt, wird dieser Block ausgeführt
+und der Rest übersprungen.
 
 ---
 ### Mehrfachauswahl: `switch` / `case`
@@ -694,18 +696,17 @@ Code und dessen Funktion lesen und verstehen.
 ### Function Declaration vs. Function Expression
 
 - **Function Declaration (Klassische Funktion):**
-  - Wird per *Hoisting* an den Anfang des Scopes gezogen -> vor ihrer Deklaration aufrufbar.
+  - Wird per *Hoisting* an den Anfang des Scopes gezogen
+  -> vor ihrer Deklaration aufrufbar.
  ```javascript
   function gruss(name) {
-      return `Hallo ${name}!`;
-  }
+      return `Hallo ${name}!`;}
   ```
 - **Function Expression (Funktionsausdruck):**
   - Funktion wird in einer Variable gespeichert -> erst **ab der Zuweisung** aufrufbar.
 ```javascript
   const gruss = function(name) {
-      return `Hallo ${name}!`;
-  };
+      return `Hallo ${name}!`;};
   ```
 
 ---
@@ -757,7 +758,8 @@ const quadrat = x => x * x;
 - **Global Scope vs. Block Scope:**
   - `const` / `let` sind streng im umschließenden Block `{ ... }` geschützt.
 - **Was ist eine Closure (Funktionsabschluss)?**
-  - Eine innere Funktion hat Zugriff auf Variablen ihres **äußeren Entstehungs-Scopes** – selbst nachdem die äußere Funktion beendet ist!
+  - Eine innere Funktion hat Zugriff auf Variablen ihres **äußeren Entstehungs-Scopes**,
+  selbst nachdem die äußere Funktion beendet ist!
 
 ```javascript
 function erstelleZaehler() {
@@ -776,9 +778,9 @@ console.log(zaehler()); // 2
 | Merkmal | Function Declaration | Arrow Function (`=>`) |
 | :--- | :--- | :--- |
 | **Syntax** | `function name() {}` | `const name = () => {}` |
-| **Hoisting** | ✅ Ja (überall aufrufbar) | ❌ Nein (erst nach Zeile verfügbar) |
+| **Hoisting** | Ja (überall aufrufbar) | Nein (erst nach Zeile verfügbar) |
 | **`this`-Bindung** | Dynamisch (hängt vom Aufrufer ab) | Lexikalisch (erbt vom Umfeld) |
-| **Impliziter Return** | ❌ Nein (benötigt `return`) | ✅ Ja (bei Einzeiler ohne `{}`) |
+| **Impliziter Return** | Nein (benötigt `return`) | Ja (bei Einzeiler ohne `{}`) |
 
 > **Best Practice:** Nutze **Arrow Functions** für Helper, Array-Methoden & Event-Handler. Nutze **Function Declarations** für zentrale Skript-Funktionen.
 

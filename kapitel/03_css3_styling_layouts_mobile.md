@@ -54,21 +54,19 @@ Diese Box besteht aus vier verschachtelten Bereichen.
 
 ---
 <!-- _class: img-right -->
-**Die Box-Dimensionen & box-sizing**
+**Box-Dimension & box-sizing**
 
-Berechnung der Gesamtbreite einer Box:
+Berechnung Gesamtbreite einer Box:
 
 - **Entweder: content-box (Standard):**
-  - `width` definiert nur die Breite des Inhalts.
+  - `width` definiert nur Breite des Inhalts.
   - Gesamtbreite = `width` + `2 * padding` + `2 * border`.
 - **Oder: border-box (Best Practice):**
   - `width` definiert die Gesamtbreite (inkl. Padding & Border).
-  - Verhindert, dass Boxen unerwartet aus dem Layout ausbrechen.
+  - Boxen brechen nicht aus Layout aus
 
 ```css
-* {
-  box-sizing: border-box;
-}
+* {  box-sizing: border-box;}
 ```
 
 ![Box Sizing Comparison](../img/css_box_sizing.png)
@@ -154,17 +152,13 @@ body {
 **Websichere Schriftarten:**
 
 - **Definition:**
-Schriftarten, die auf fast allen Betriebssystemen
-(Windows, macOS, Linux, iOS, Android)
+Schriftarten, die auf fast allen Betriebssystemen (Windows, macOS, Linux, iOS, Android)
 standardmäßig vorinstalliert sind.
 - **Der große Vorteil:**
-Sehr hohe Wahrscheinlichkeit, dass die
-Schriftart auf dem Gerät des Nutzers vorhanden ist
-$\rightarrow$ keine Ladezeitverzögerung und
-vollkommen DSGVO-konform.
+Sehr hohe Wahrscheinlichkeit, dass die Schriftart auf dem Gerät des Nutzers vorhanden ist
+$\rightarrow$ keine Ladezeitverzögerung und vollkommen DSGVO-konform.
 - **Die Kehrseite:**
-Die Auswahl an websicheren Schriftarten ist
-sehr stark limitiert
+Die Auswahl an websicheren Schriftarten ist sehr stark limitiert
 (Gefahr von visuellem Einheitsbrei).
 
 ---
@@ -194,7 +188,7 @@ sehr stark limitiert
 **Google Fonts**
 
 - **Was sind Google Fonts?**
-  - Google Fonts ist ein kostenloser Online-Dienst
+  - Google Fonts = kostenloser Online-Dienst
     von Google, der eine riesige Bibliothek
     an Schriftarten zum Einbinden in
     Webseiten bereitstellt.
@@ -457,9 +451,7 @@ Wie werden Farben im html & css verwendet?
 
 
 ```css
-h1 {
-  color: tomato;
-}
+h1 {color: tomato;}
 ```
 
 
@@ -478,52 +470,45 @@ https://wiki.selfhtml.org/wiki/Farbe/Farbangaben#Farbnamen
 **2. RGB- und RGBA-Schreibweise**
 
 - **RGB-Parameter:**
-  - Angabe als `rgb(R, G, B)`, wobei jeder Kanal Werte von `0` (kein Licht) bis `255` (maximale Helligkeit) annehmen kann.
+  - Angabe `rgb(R, G, B)`, jeder Kanal Werte von `0` (kein Licht) bis `255` (maximale Licht) annehmen kann.
 - **RGBA (Transparenz):**
-  - Ermöglicht über den vierten Wert (`Alpha-Kanal`) eine Deckkraft-Steuerung.
-  - Der Alpha-Wert reicht von `0.0` (vollständig transparent) bis `1.0` (vollständig deckend).
+  - A=`Alpha-Kanal` zur Deckkraft-Steuerung.
+  - Deckkraft reicht von `0.0` (transparent) bis `1.0` (deckend).
 
 ```css
-h1 {
-  color: rgba(255, 118, 117, 0.8);
-}
+h1 {color: rgba(255, 118, 117, 0.8);}
 ```
 
 ![RGB und RGBA](../img/color_rgb.png)
 
 ---
 <!-- _class: img-right -->
-**3. Hexadezimal(Hex)-Codes** sehr häufig
+**3. Hexadezimal(Hex)-Codes** häufig
 
 - **Aufbau:**
-  - Beginnt mit einem Doppelkreuz `#` plus 6 Zeichen: `#RRGGBB`.
-  - Nutzt das Hexadezimalsystem (Basis 16: Ziffern `0-9` und Buchstaben `A-F`).
+  - Beginnt mit  Doppelkreuz `#` plus 6 Zeichen: `#RRGGBB`.
+  - Hexadezimalsystem (Basis 16: Ziffern `0-9` und Buchstaben `A-F`).
 - **Kurzschreibweise:**
-  - Kürzen auf 3 Zeichen, wenn die Paare für RGB identisch sind (`#FF0055` -> `#F05`).
+  - Kürzen auf 3 Zeichen, wenn Paare identisch sind (`#FF0055` -> `#F05`).
 
 ```css
-h1 {
-  color: #ff7675;
-}
+h1 {  color: #ff7675;}
 ```
 
 ![Hexadezimal-Schreibweise](../img/color_hex.png)
 
 ---
 <!-- _class: img-right -->
-**4. HSL- und HSLA-Schreibweise** (intuitiv)
+**4. HSL/A Schreibweise** (intuitiv)
 
 
-- **Die Komponenten:**
-  - **Hue (Farbton):** Winkel auf dem Farbkreis (`0°` bis `360°`). `0` = Rot, `120` = Grün, `240` = Blau.
+  - **Hue (Farbton):** Winkel auf Farbkreis (`0°` bis `360°`). `0` = Rot, `120` = Grün, `240` = Blau.
   - **Saturation (Sättigung):** Anteil an Grauwerten (`0%` bis `100%`).
   - **Lightness (Helligkeit):** Helligkeit (`0%` = Schwarz, `100%` = Weiß).
-- **Vorteil:** Designer können Farbpaletten extrem einfach manipulieren (z. B. durch Erhöhung der Helligkeit).
+- **Vorteil:** einfache Manipulation von Farbpaletten  (z. B. heller machen).
 
 ```css
-h1 {
-  color: hsl(197, 100%, 50%);
-}
+h1 {  color: hsl(197, 100%, 50%);}
 ```
 
 ![HSL und HSLA](../img/color_hsl.png)
@@ -538,14 +523,14 @@ Zur Angabe von Höhen, Breiten, Innen- und Außenabständen müssen Sie in CSS e
 <!-- _class: img-right -->
 **Absolute Maßeinheiten**
 
-Absolute Werte: kein Bezug zu anderen Angaben, unabhängig von der Umgebung.
+Absolute Werte: kein Bezug zu anderen Angaben
 
 - **Pixel (px):** Standard im Webdesign
   - Entspricht  Bildpunkten des Monitors
 - **Physische Maßeinheiten:**
   - **pt (Punkt):** Typograf. Maß (1/72 Inch).
   - **in (Inch), cm (Zentimeter), mm (Millimeter).**
-  - *Wichtig:* Physische Einheiten sind nur für **Druck-Stylesheets** (`@media print`) geeignet, da Bildschirme zu ungenau sind.
+  - *Wichtig:* Physische Einheiten sind nur für **Druck-Stylesheets** (`@media print`) geeignet.
 
 ![Absolute Einheiten](../img/css_units_absolute.png)
 
@@ -565,7 +550,7 @@ Relative Einheiten skalieren dynamisch und stehen immer in Bezug zu anderen Wert
 
 ---
 <!-- _class: img-right -->
-**Beispiel: Der em-Multiplikations-Effekt**
+**Beispiel: em-Multiplikation**
 
 Wenn verschachtelte Listen (`<ul>`) relative `em`-Schriftgrößen verwenden, multipliziert sich der Wert auf jeder Ebene des DOM-Baums:
 
@@ -610,7 +595,8 @@ Viewport-Einheiten beziehen sich direkt auf die aktuellen Dimensionen des Browse
 - **vmax (Viewport Maximum):**
   - Nutzt den Prozentwert der jeweils längeren Viewport-Seite.
 - **Vorteil:**
-  - Ermöglicht proportionales Skalieren bei Orientierungswechseln auf Mobilgeräten.
+  - Ermöglicht proportionales Skalieren
+  bei Drehen von Smartphones.
 
 ![vmin und vmax](../img/css_units_vmin_vmax.png)
 
@@ -621,7 +607,8 @@ Viewport-Einheiten beziehen sich direkt auf die aktuellen Dimensionen des Browse
 **Prozent (%) & Best Practices**
 
 - **Prozentwert (%):**
-  - **Layouts (Breiten/Höhen):** Bezieht sich auf umschließenden Container (z. B. Bild `width: 50%` in einer `600px` Box ist `300px` breit).
+  - **Layouts (Breiten/Höhen):** Bezieht sich auf umschließenden Container
+  (z. B. Bild `width: 50%` in einer `600px` Box ist `300px` breit).
   - **Schriftgrößen:** Bezieht sich auf die vererbte Schriftgröße des Elternelements (75% bei 16px = 12px).
 
 ![Prozent und Best Practices](../img/css_units_best_practices.png)
@@ -662,7 +649,7 @@ Für Übersicht und fehlerfreie Verlinkung ist eine saubere Struktur im **Wurzel
 
 **Warum fast immer?**
 
-Server sucht automatisch im angeforderten Verzeichnis nach  `index.html`.
+Server sucht  im angeforderten Verzeichnis nach  `index.html`.
 
 Der Webserver kann aber auch so konfiguriert werden, dass er nach einer anderen Datei sucht:
 - httpd.conf öffnen &  "DirectoryIndex" suchen
@@ -1197,11 +1184,11 @@ Das Layout hat **feste Abmessungen**, meist definiert in Pixeln (`px`).
 
 ### Fluid Layout (Flüssig)
 
-Das Layout nutzt **relative Einheiten**, meist Prozentwerte (`%`) in der Breite, in der Länge können feste Pixelwerte verwendet werden -> Vertikales Scrollen.
+Layout nutzt **relative Einheiten**, meist Prozentwerte (`%`) in der Breite, in der Länge auch feste Pixelwerte  -> Vertikales Scrollen möglich.
 
 - **Verhalten:** Die Elemente dehnen sich aus oder schrumpfen proportional zur Fensterbreite.
-- Es füllt immer den verfügbaren Platz aus.
-- **Heute:** Ein sehr wichtiger und grundlegender Baustein für Responsive Webdesign.
+- füllt immer den verfügbaren Platz aus.
+- **Heute:** Grundlegender Baustein für Responsive Webdesign.
 
 ![Fluid](../img/fluid_layout.png)
 
@@ -1233,7 +1220,7 @@ Zwei grundlegend unterschiedliche Konzepte im Webdesign.
 <!-- _class: img-right small-text -->
 
 **Responsive Webdesign (RWD):**
-- Ein **einziges, flüssiges Layout**, mit Media Queries
+- **Ein!, flüssiges Layout**, mit Media Queries
 - nutzt Fluid Grids und flexible Bilder.
 - Webseite skaliert auf alle Bildschirmgrößen
 - Einziges Layout für alle Geräte
@@ -1803,10 +1790,12 @@ article {
 ---
 <!-- _class: structural -->
 ## Mobile First!
-- 44,2 % der Deutschen Internetnutzer greifen mobil zu.
-- Im internationalen Vergleich sind dies relativ wenige.
+- 44,2 % der Deutschen Internetnutzer
+greifen mobil zu.
+- Im internationalen Vergleich sind
+dies relativ wenige.
 - Weltweit sind es im durschnitt über 53%.
-- Interessant: Mobile steigt KI
+- Interessant: Bei Mobile steigt KI Nutzung
 - Desktop gewinnt an Boden im Web
 
 
@@ -2129,8 +2118,7 @@ Floaten aktivieren, Zweispaltigkeit einrichten
 ```css
 @media screen and (min-width: 576px) {
     #wrapper {
-    width: 80%;
-    } }
+    width: 80%;} }
 ```
 ```css
 @media screen and (min-width: 768px) {

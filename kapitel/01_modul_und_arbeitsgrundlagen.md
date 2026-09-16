@@ -175,58 +175,75 @@ https://code.visualstudio.com/
 - Eingebautes Terminal und Debugging-Tools
 - Industriestandard für moderne Webentwicklung
 
-![bg right:50%](../img/vscode.jpg)
+![bg right:40%](../img/vscode.jpg)
 
 ---
 #### Antigravity
 
 https://antigravity.ai/
 
-- Leistungsstarker, agentischer KI-Coding-Assistent von Google DeepMind
-- Arbeitet im direkten Projektkontext und versteht die gesamte Codebasis
-- Kann selbstständig Code schreiben, debuggen, testen und Dateien modifizieren
-- Unterstützt bei der strukturierten Planung komplexer Webprojekte
-- Begleitet Entwickler als digitaler Partner bei Code-Qualität, Semantik und Barrierefreiheit
+- Leistungsstarker, agentischer KI-Coding-Assistent
+von Google DeepMind
+- Arbeitet im direkten Projektkontext und versteht
+die gesamte Codebasis
+- Kann selbstständig Code schreiben, debuggen, testen
+und Dateien modifizieren
+- Unterstützt bei der strukturierten Planung
+komplexer Webprojekte
+- Begleitet Entwickler als digitaler Partner bei
+Code-Qualität, Semantik und Barrierefreiheit
 
-![bg right:50%](../img/antigravity.jpg)
+![bg right:40%](../img/antigravity.jpg)
 
 ---
 #### Cursor
 
 https://cursor.com/
 
-- KI-gestützter Code-Editor, der als Fork von VS Code entwickelt wurde
-- Vollständig kompatibel mit allen VS Code-Erweiterungen und -Themes
-- Bietet native KI-Features wie Inline-Codegenerierung, Chat und automatische Fehlerbehebung
-- Ermöglicht das Referenzieren und Durchsuchen der gesamten Codebasis (@Files, @Folders, @Codebase)
-- KI-gestütztes Autocomplete (Tab-Vervollständigung), das oft ganze Zeilen oder Blöcke vorausahnt
-![bg right:50%](../img/cursor.jpg)
+- KI-gestützter Code-Editor, der als Fork von
+VS Code entwickelt wurde
+- Vollständig kompatibel mit allen VS Code-Erweiterungen
+und -Themes
+- Bietet native KI-Features wie Inline-Codegenerierung,
+Chat und automatische Fehlerbehebung
+- Ermöglicht das Referenzieren und Durchsuchen der
+gesamten Codebasis (@Files, @Folders, @Codebase)
+- KI-gestütztes Autocomplete (Tab-Vervollständigung),
+das oft ganze Zeilen oder Blöcke vorausahnt
+![bg right:40%](../img/cursor.jpg)
 
 ---
 #### XAMPP
 
 https://www.apachefriends.org/
 
-- Kostenlose & einfach zu installierende lokale Serverumgebung
-- Komplettpaket aus Apache (Webserver), MariaDB (Datenbank), Skriptsprachen PHP und Perl
-- Ermöglicht lokales Entwickeln und Testen von dynamischen Webanwendungen ohne Live-Webserver
-- Einfache Verwaltung aller Dienste über das XAMPP Control Panel
+- Kostenlose & einfach zu installierende
+lokale Serverumgebung
+- Komplettpaket aus Apache (Webserver),
+MariaDB (Datenbank), Skriptsprachen PHP und Perl
+- Ermöglicht lokales Entwickeln und Testen von dynamischen
+Webanwendungen ohne Live-Webserver
+- Einfache Verwaltung aller Dienste über das
+XAMPP Control Panel
 
-![bg right:50%](../img/xampp.jpg)
+![bg right:40%](../img/xampp.jpg)
 
 ---
 #### Chrome
 
 https://www.google.com/chrome/
 
-- Schneller, sicherer und weltweit am meisten genutzter Webbrowser von Google
-- Leistungsstarke Entwicklertools (Chrome DevTools) zur Fehlerbehebung / Code-Analyse
+- Schneller, sicherer und weltweit am meisten
+genutzter Webbrowser von Google
+- Leistungsstarke Entwicklertools (Chrome DevTools)
+zur Fehlerbehebung / Code-Analyse
 (HTML, CSS, JS)
 - Führend in der Unterstützung moderner
 Webstandards und APIs
-- Integrierte Tools für mobiles Testen (Responsive Mode) und Performance-Audits (Lighthouse)
+- Integrierte Tools für mobiles Testen (Responsive Mode)
+und Performance-Audits (Lighthouse)
 
-![bg right:50%](../img/chrome.jpg)
+![bg right:40%](../img/chrome.jpg)
 
 ---
 #### Weitere Browser
@@ -238,7 +255,7 @@ zunehmend verbesserte DevTools
 - Safari: Essentiell für das Testen
 auf Apple-Geräten
 
-![bg right:50%](../img/browser.jpg)
+![bg right:40%](../img/browser.jpg)
 
 ---
 
@@ -247,13 +264,14 @@ auf Apple-Geräten
 https://git-scm.com/
 https://github.com/
 
-- Weltweit am häufigsten genutztes, verteiltes Versionskontrollsystem
+- Weltweit am häufigsten genutztes,
+verteiltes Versionskontrollsystem
 - Protokolliert alle Änderungen im Quellcode
 lückenlos macht sie rückgängig machbar
 - Paralleles Arbeiten im Team über unabhängige Entwicklungszweige (Branches)
 - Basis für Cloud-Plattformen zur
 Zusammenarbeit wie GitHub und GitLab
-![bg right:50%](../img/git.jpg)
+![bg right:40%](../img/git.jpg)
 
 ---
 #### Weitere Software

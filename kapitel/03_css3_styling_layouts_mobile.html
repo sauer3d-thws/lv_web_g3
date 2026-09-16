@@ -69,25 +69,23 @@ Diese Box besteht aus vier verschachtelten Bereichen.</p>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="6" data-paginate="true" data-header="**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170" data-footer="[zurück zur Übersicht](../index.html)" data-class="img-right" data-theme="thws-sts" lang="en-US" class="img-right" data-marpit-pagination="6" style="--paginate:true;--header:**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170;--footer:[zurück zur Übersicht](../index.html);--class:img-right;--theme:thws-sts;" data-marpit-pagination-total="161">
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 
-<p><strong>Die Box-Dimensionen &amp; box-sizing</strong></p>
-<p>Berechnung der Gesamtbreite einer Box:</p>
+<p><strong>Box-Dimension &amp; box-sizing</strong></p>
+<p>Berechnung Gesamtbreite einer Box:</p>
 <ul>
 <li><strong>Entweder: content-box (Standard):</strong>
 <ul>
-<li><code>width</code> definiert nur die Breite des Inhalts.</li>
+<li><code>width</code> definiert nur Breite des Inhalts.</li>
 <li>Gesamtbreite = <code>width</code> + <code>2 * padding</code> + <code>2 * border</code>.</li>
 </ul>
 </li>
 <li><strong>Oder: border-box (Best Practice):</strong>
 <ul>
 <li><code>width</code> definiert die Gesamtbreite (inkl. Padding &amp; Border).</li>
-<li>Verhindert, dass Boxen unerwartet aus dem Layout ausbrechen.</li>
+<li>Boxen brechen nicht aus Layout aus</li>
 </ul>
 </li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css">* {
-  <span class="hljs-attribute">box-sizing</span>: border-box;
-}
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css">* {  <span class="hljs-attribute">box-sizing</span>: border-box;}
 </code></pre>
 <p><img src="../img/css_box_sizing.png" alt="Box Sizing Comparison" /></p>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
@@ -189,17 +187,13 @@ Schriftart wird gerendert.</li>
 <p><strong>Websichere Schriftarten:</strong></p>
 <ul>
 <li><strong>Definition:</strong><br />
-Schriftarten, die auf fast allen Betriebssystemen<br />
-(Windows, macOS, Linux, iOS, Android)<br />
+Schriftarten, die auf fast allen Betriebssystemen (Windows, macOS, Linux, iOS, Android)<br />
 standardmäßig vorinstalliert sind.</li>
 <li><strong>Der große Vorteil:</strong><br />
-Sehr hohe Wahrscheinlichkeit, dass die<br />
-Schriftart auf dem Gerät des Nutzers vorhanden ist<br />
-<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> keine Ladezeitverzögerung und<br />
-vollkommen DSGVO-konform.</li>
+Sehr hohe Wahrscheinlichkeit, dass die Schriftart auf dem Gerät des Nutzers vorhanden ist<br />
+<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> keine Ladezeitverzögerung und vollkommen DSGVO-konform.</li>
 <li><strong>Die Kehrseite:</strong><br />
-Die Auswahl an websicheren Schriftarten ist<br />
-sehr stark limitiert<br />
+Die Auswahl an websicheren Schriftarten ist sehr stark limitiert<br />
 (Gefahr von visuellem Einheitsbrei).</li>
 </ul>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
@@ -244,7 +238,7 @@ sehr stark limitiert<br />
 <ul>
 <li><strong>Was sind Google Fonts?</strong>
 <ul>
-<li>Google Fonts ist ein kostenloser Online-Dienst<br />
+<li>Google Fonts = kostenloser Online-Dienst<br />
 von Google, der eine riesige Bibliothek<br />
 an Schriftarten zum Einbinden in<br />
 Webseiten bereitstellt.</li>
@@ -544,9 +538,7 @@ font-size: 1.8em; font-family: '1-Punk',Georgia,&quot;Trebuchet MS&quot;,verdana
 </ul>
 </li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {
-  <span class="hljs-attribute">color</span>: tomato;
-}
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {<span class="hljs-attribute">color</span>: tomato;}
 </code></pre>
 <p><img src="../img/color_keywords.png" alt="Farbnamen" /></p>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
@@ -564,19 +556,17 @@ font-size: 1.8em; font-family: '1-Punk',Georgia,&quot;Trebuchet MS&quot;,verdana
 <ul>
 <li><strong>RGB-Parameter:</strong>
 <ul>
-<li>Angabe als <code>rgb(R, G, B)</code>, wobei jeder Kanal Werte von <code>0</code> (kein Licht) bis <code>255</code> (maximale Helligkeit) annehmen kann.</li>
+<li>Angabe <code>rgb(R, G, B)</code>, jeder Kanal Werte von <code>0</code> (kein Licht) bis <code>255</code> (maximale Licht) annehmen kann.</li>
 </ul>
 </li>
 <li><strong>RGBA (Transparenz):</strong>
 <ul>
-<li>Ermöglicht über den vierten Wert (<code>Alpha-Kanal</code>) eine Deckkraft-Steuerung.</li>
-<li>Der Alpha-Wert reicht von <code>0.0</code> (vollständig transparent) bis <code>1.0</code> (vollständig deckend).</li>
+<li>A=<code>Alpha-Kanal</code> zur Deckkraft-Steuerung.</li>
+<li>Deckkraft reicht von <code>0.0</code> (transparent) bis <code>1.0</code> (deckend).</li>
 </ul>
 </li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">118</span>, <span class="hljs-number">117</span>, <span class="hljs-number">0.8</span>);
-}
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {<span class="hljs-attribute">color</span>: <span class="hljs-built_in">rgba</span>(<span class="hljs-number">255</span>, <span class="hljs-number">118</span>, <span class="hljs-number">117</span>, <span class="hljs-number">0.8</span>);}
 </code></pre>
 <p><img src="../img/color_rgb.png" alt="RGB und RGBA" /></p>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
@@ -584,23 +574,21 @@ font-size: 1.8em; font-family: '1-Punk',Georgia,&quot;Trebuchet MS&quot;,verdana
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="45" data-paginate="true" data-header="**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170" data-footer="[zurück zur Übersicht](../index.html)" data-class="img-right" data-theme="thws-sts" lang="en-US" class="img-right" data-marpit-pagination="45" style="--paginate:true;--header:**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170;--footer:[zurück zur Übersicht](../index.html);--class:img-right;--theme:thws-sts;" data-marpit-pagination-total="161">
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 
-<p><strong>3. Hexadezimal(Hex)-Codes</strong> sehr häufig</p>
+<p><strong>3. Hexadezimal(Hex)-Codes</strong> häufig</p>
 <ul>
 <li><strong>Aufbau:</strong>
 <ul>
-<li>Beginnt mit einem Doppelkreuz <code>#</code> plus 6 Zeichen: <code>#RRGGBB</code>.</li>
-<li>Nutzt das Hexadezimalsystem (Basis 16: Ziffern <code>0-9</code> und Buchstaben <code>A-F</code>).</li>
+<li>Beginnt mit  Doppelkreuz <code>#</code> plus 6 Zeichen: <code>#RRGGBB</code>.</li>
+<li>Hexadezimalsystem (Basis 16: Ziffern <code>0-9</code> und Buchstaben <code>A-F</code>).</li>
 </ul>
 </li>
 <li><strong>Kurzschreibweise:</strong>
 <ul>
-<li>Kürzen auf 3 Zeichen, wenn die Paare für RGB identisch sind (<code>#FF0055</code> -&gt; <code>#F05</code>).</li>
+<li>Kürzen auf 3 Zeichen, wenn Paare identisch sind (<code>#FF0055</code> -&gt; <code>#F05</code>).</li>
 </ul>
 </li>
 </ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff7675</span>;
-}
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {  <span class="hljs-attribute">color</span>: <span class="hljs-number">#ff7675</span>;}
 </code></pre>
 <p><img src="../img/color_hex.png" alt="Hexadezimal-Schreibweise" /></p>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
@@ -608,20 +596,14 @@ font-size: 1.8em; font-family: '1-Punk',Georgia,&quot;Trebuchet MS&quot;,verdana
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="46" data-paginate="true" data-header="**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170" data-footer="[zurück zur Übersicht](../index.html)" data-class="img-right" data-theme="thws-sts" lang="en-US" class="img-right" data-marpit-pagination="46" style="--paginate:true;--header:**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170;--footer:[zurück zur Übersicht](../index.html);--class:img-right;--theme:thws-sts;" data-marpit-pagination-total="161">
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 
-<p><strong>4. HSL- und HSLA-Schreibweise</strong> (intuitiv)</p>
+<p><strong>4. HSL/A Schreibweise</strong> (intuitiv)</p>
 <ul>
-<li><strong>Die Komponenten:</strong>
-<ul>
-<li><strong>Hue (Farbton):</strong> Winkel auf dem Farbkreis (<code>0°</code> bis <code>360°</code>). <code>0</code> = Rot, <code>120</code> = Grün, <code>240</code> = Blau.</li>
+<li><strong>Hue (Farbton):</strong> Winkel auf Farbkreis (<code>0°</code> bis <code>360°</code>). <code>0</code> = Rot, <code>120</code> = Grün, <code>240</code> = Blau.</li>
 <li><strong>Saturation (Sättigung):</strong> Anteil an Grauwerten (<code>0%</code> bis <code>100%</code>).</li>
 <li><strong>Lightness (Helligkeit):</strong> Helligkeit (<code>0%</code> = Schwarz, <code>100%</code> = Weiß).</li>
+<li><strong>Vorteil:</strong> einfache Manipulation von Farbpaletten  (z. B. heller machen).</li>
 </ul>
-</li>
-<li><strong>Vorteil:</strong> Designer können Farbpaletten extrem einfach manipulieren (z. B. durch Erhöhung der Helligkeit).</li>
-</ul>
-<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {
-  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsl</span>(<span class="hljs-number">197</span>, <span class="hljs-number">100%</span>, <span class="hljs-number">50%</span>);
-}
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-tag">h1</span> {  <span class="hljs-attribute">color</span>: <span class="hljs-built_in">hsl</span>(<span class="hljs-number">197</span>, <span class="hljs-number">100%</span>, <span class="hljs-number">50%</span>);}
 </code></pre>
 <p><img src="../img/color_hsl.png" alt="HSL und HSLA" /></p>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
@@ -637,7 +619,7 @@ font-size: 1.8em; font-family: '1-Punk',Georgia,&quot;Trebuchet MS&quot;,verdana
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 
 <p><strong>Absolute Maßeinheiten</strong></p>
-<p>Absolute Werte: kein Bezug zu anderen Angaben, unabhängig von der Umgebung.</p>
+<p>Absolute Werte: kein Bezug zu anderen Angaben</p>
 <ul>
 <li><strong>Pixel (px):</strong> Standard im Webdesign
 <ul>
@@ -648,7 +630,7 @@ font-size: 1.8em; font-family: '1-Punk',Georgia,&quot;Trebuchet MS&quot;,verdana
 <ul>
 <li><strong>pt (Punkt):</strong> Typograf. Maß (1/72 Inch).</li>
 <li><strong>in (Inch), cm (Zentimeter), mm (Millimeter).</strong></li>
-<li><em>Wichtig:</em> Physische Einheiten sind nur für <strong>Druck-Stylesheets</strong> (<code>@media print</code>) geeignet, da Bildschirme zu ungenau sind.</li>
+<li><em>Wichtig:</em> Physische Einheiten sind nur für <strong>Druck-Stylesheets</strong> (<code>@media print</code>) geeignet.</li>
 </ul>
 </li>
 </ul>
@@ -675,7 +657,7 @@ font-size: 1.8em; font-family: '1-Punk',Georgia,&quot;Trebuchet MS&quot;,verdana
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="50" data-paginate="true" data-header="**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170" data-footer="[zurück zur Übersicht](../index.html)" data-class="img-right" data-theme="thws-sts" lang="en-US" class="img-right" data-marpit-pagination="50" style="--paginate:true;--header:**Webprogrammierung** &lt;br&gt; THWS Modul-Nr: 6322170;--footer:[zurück zur Übersicht](../index.html);--class:img-right;--theme:thws-sts;" data-marpit-pagination-total="161">
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 
-<p><strong>Beispiel: Der em-Multiplikations-Effekt</strong></p>
+<p><strong>Beispiel: em-Multiplikation</strong></p>
 <p>Wenn verschachtelte Listen (<code>&lt;ul&gt;</code>) relative <code>em</code>-Schriftgrößen verwenden, multipliziert sich der Wert auf jeder Ebene des DOM-Baums:</p>
 <ul>
 <li><strong>Ebene 1 (Basis 16px):</strong> <code>1.5em</code> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> <strong>24px</strong></li>
@@ -738,7 +720,8 @@ in tiefen Dokumentstrukturen.</li>
 </li>
 <li><strong>Vorteil:</strong>
 <ul>
-<li>Ermöglicht proportionales Skalieren bei Orientierungswechseln auf Mobilgeräten.</li>
+<li>Ermöglicht proportionales Skalieren<br />
+bei Drehen von Smartphones.</li>
 </ul>
 </li>
 </ul>
@@ -752,7 +735,8 @@ in tiefen Dokumentstrukturen.</li>
 <ul>
 <li><strong>Prozentwert (%):</strong>
 <ul>
-<li><strong>Layouts (Breiten/Höhen):</strong> Bezieht sich auf umschließenden Container (z. B. Bild <code>width: 50%</code> in einer <code>600px</code> Box ist <code>300px</code> breit).</li>
+<li><strong>Layouts (Breiten/Höhen):</strong> Bezieht sich auf umschließenden Container<br />
+(z. B. Bild <code>width: 50%</code> in einer <code>600px</code> Box ist <code>300px</code> breit).</li>
 <li><strong>Schriftgrößen:</strong> Bezieht sich auf die vererbte Schriftgröße des Elternelements (75% bei 16px = 12px).</li>
 </ul>
 </li>
@@ -802,7 +786,7 @@ in tiefen Dokumentstrukturen.</li>
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 
 <p><strong>Warum fast immer?</strong></p>
-<p>Server sucht automatisch im angeforderten Verzeichnis nach  <code>index.html</code>.</p>
+<p>Server sucht  im angeforderten Verzeichnis nach  <code>index.html</code>.</p>
 <p>Der Webserver kann aber auch so konfiguriert werden, dass er nach einer anderen Datei sucht:</p>
 <ul>
 <li>httpd.conf öffnen &amp;  &quot;DirectoryIndex&quot; suchen</li>
@@ -1436,11 +1420,11 @@ Einfach mal zu Hause bleiben<span class="hljs-tag">&lt;<span class="hljs-name">b
 <header><strong>Webprogrammierung</strong> <br /> THWS Modul-Nr: 6322170</header>
 
 <h3 id="fluid-layout-fl%C3%BCssig">Fluid Layout (Flüssig)</h3>
-<p>Das Layout nutzt <strong>relative Einheiten</strong>, meist Prozentwerte (<code>%</code>) in der Breite, in der Länge können feste Pixelwerte verwendet werden -&gt; Vertikales Scrollen.</p>
+<p>Layout nutzt <strong>relative Einheiten</strong>, meist Prozentwerte (<code>%</code>) in der Breite, in der Länge auch feste Pixelwerte  -&gt; Vertikales Scrollen möglich.</p>
 <ul>
 <li><strong>Verhalten:</strong> Die Elemente dehnen sich aus oder schrumpfen proportional zur Fensterbreite.</li>
-<li>Es füllt immer den verfügbaren Platz aus.</li>
-<li><strong>Heute:</strong> Ein sehr wichtiger und grundlegender Baustein für Responsive Webdesign.</li>
+<li>füllt immer den verfügbaren Platz aus.</li>
+<li><strong>Heute:</strong> Grundlegender Baustein für Responsive Webdesign.</li>
 </ul>
 <p><img src="../img/fluid_layout.png" alt="Fluid" /></p>
 <h6 id="quellen-mdn-css-layout"><strong>Quellen:</strong> <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout">MDN CSS Layout</a></h6>
@@ -1471,7 +1455,7 @@ Einfach mal zu Hause bleiben<span class="hljs-tag">&lt;<span class="hljs-name">b
 
 <p><strong>Responsive Webdesign (RWD):</strong></p>
 <ul>
-<li>Ein <strong>einziges, flüssiges Layout</strong>, mit Media Queries</li>
+<li><strong>Ein!, flüssiges Layout</strong>, mit Media Queries</li>
 <li>nutzt Fluid Grids und flexible Bilder.</li>
 <li>Webseite skaliert auf alle Bildschirmgrößen</li>
 <li>Einziges Layout für alle Geräte</li>
@@ -2045,10 +2029,12 @@ helvetica,sans-serif;
 
 <h2 id="mobile-first">Mobile First!</h2>
 <ul>
-<li>44,2 % der Deutschen Internetnutzer greifen mobil zu.</li>
-<li>Im internationalen Vergleich sind dies relativ wenige.</li>
+<li>44,2 % der Deutschen Internetnutzer<br />
+greifen mobil zu.</li>
+<li>Im internationalen Vergleich sind<br />
+dies relativ wenige.</li>
 <li>Weltweit sind es im durschnitt über 53%.</li>
-<li>Interessant: Mobile steigt KI</li>
+<li>Interessant: Bei Mobile steigt KI Nutzung</li>
 <li>Desktop gewinnt an Boden im Web</li>
 </ul>
 <h5 id="httpsstatistiken-aktuelldesmartphone-internetnutzung"><a href="https://statistiken-aktuell.de/smartphone-internetnutzung/">https://statistiken-aktuell.de/smartphone-internetnutzung/</a></h5>
@@ -2394,8 +2380,7 @@ Floaten aktivieren, Zweispaltigkeit einrichten</li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">576px</span>) {
     <span class="hljs-selector-id">#wrapper</span> {
-    <span class="hljs-attribute">width</span>: <span class="hljs-number">80%</span>;
-    } }
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">80%</span>;} }
 </code></pre>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">768px</span>) {
 <span class="hljs-selector-tag">aside</span> {
