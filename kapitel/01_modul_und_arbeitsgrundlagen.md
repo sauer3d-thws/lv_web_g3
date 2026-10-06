@@ -98,8 +98,6 @@ https://www.w3.org/WAI/
 
 Egal welche Quelle genutzt wird: Der moderne Ansatz lautet "Digital Shepherd" (Digitaler Hirte). Man sollte Code (egal ob aus Tutorials, Foren oder von einer KI generiert) niemals blind kopieren. Die eigentliche Kompetenz liegt aktuell darin, den Code zu verstehen, seine Barrierefreiheit (z.B. korrekte Alt-Texte für Bilder), semantische Sauberkeit und Performance zu validieren, um langfristig wartbare Webprojekte aufzubauen.
 
----
-![bg full:bg](../img/digital_shepherd.png)
 
 ---
 **Digital Shepherd & "Vibe Coding"**
@@ -147,9 +145,11 @@ Wie verändert sich die Rolle von Webentwicklern durch generative KI?
 ---
 #### Notepad++
 - Windows only
-- Kostenlos & Open Source: quelloffen für Text Code
+- Kostenlos & Open Source: quelloffen
+für Text Code
 - ressourcenschonend, schnell
-- Syntax-Hervorhebung & -Ausblendung (Code Folding):
+- Syntax-Hervorhebung & -Ausblendung
+(Code Folding):
 
 https://notepad-plus-plus.org/downloads/
 ![bg right:50%](../img/notepad.jpeg)
@@ -168,7 +168,8 @@ https://notepad-plus-plus.org/downloads/
 
 https://code.visualstudio.com/
 
-- Kostenlos & plattformübergreifend (Windows, macOS, Linux)
+- Kostenlos & plattformübergreifend:
+Windows, macOS, Linux
 - Riesiger Marketplace für Erweiterungen (Extensions)
 - Hervorragende Autovervollständigung (IntelliSense)
 - Integrierte Git-Unterstützung und Versionskontrolle
@@ -268,7 +269,8 @@ https://github.com/
 verteiltes Versionskontrollsystem
 - Protokolliert alle Änderungen im Quellcode
 lückenlos macht sie rückgängig machbar
-- Paralleles Arbeiten im Team über unabhängige Entwicklungszweige (Branches)
+- Paralleles Arbeiten im Team über
+unabhängige Entwicklungszweige (Branches)
 - Basis für Cloud-Plattformen zur
 Zusammenarbeit wie GitHub und GitLab
 ![bg right:40%](../img/git.jpg)
@@ -293,7 +295,7 @@ Zusammenarbeit wie GitHub und GitLab
 ### Das Projekt
 2020 beschließt der KFZ Mechaniker
 Meister Maik seine Passion zur
-Haupterwerbsquelle & sich selbstständi
+Haupterwerbsquelle & sich selbstständig
  zu machen.
 Durch sein mobiles Leben im LKW hat er sich auf
 den Ausbau von Fahrzeugen zu autarken
@@ -330,7 +332,8 @@ digitalen Kontaktdaten.
 ---
 ### Das Konzept
 
-Bevor überhaupt eine einzige Zeile Code geschrieben wird, muss zuerst definiert werden, welche Ziele mit dem Webauftritt verfolgt werden.
+Bevor überhaupt eine einzige Zeile Code geschrieben wird, muss zuerst definiert werden,
+welche Ziele mit dem Webauftritt verfolgt werden.
 > **Zieldefinition:**
 Webseiten-Ziele vor der Entwicklung festlegen.
 Am besten in einem Workshop oder Gespräch mit dem Auftraggeber.
@@ -374,8 +377,10 @@ Es gibt kein universell "gutes" Design
 ---
 
 - **Einfluss demografischer Faktoren:**
-  - **Ältere Zielgruppen:** Benötigen barrierefreies Design (z. B. größere Schriften), legen mehr Wert auf Inhalt und Seriosität als auf reines Styling.
-  - **Jüngere Zielgruppen:** Erwarten ein modernes "Look and Feel" und ein hochwertiges, visuelles Design.
+  - **Ältere Zielgruppen:** Benötigen barrierefreies Design (z. B. größere Schriften),
+  legen mehr Wert auf Inhalt und Seriosität als auf reines Styling.
+  - **Jüngere Zielgruppen:** Erwarten ein modernes "Look and Feel"
+  und ein hochwertiges, visuelles Design.
 - **Bedürfnisse & Erwartungen:** Die optische und inhaltliche Ausrichtung muss dem Thema entsprechen (z. B. NGO-Informationsseite vs. Lifestyle-Webshop).
 
 ---
@@ -399,7 +404,8 @@ Kein Element ohne Funktion!
 - **Layout-Struktur nach dem F-Schema:**
   - Nutzer scannen Webseiten in F-Form
   (oben links $\rightarrow$ rechts, tiefer links $\rightarrow$ rechts, links nach unten).
-  - **Typische Anordnung:** Logo oben links, Navigationsmenü im Kopfbereich, zentraler „Hero-Shot“ (Kernaussage) in der Mitte.
+  - **Typische Anordnung:** Logo oben links, Navigationsmenü im Kopfbereich,
+  zentraler „Hero-Shot“ (Kernaussage) in der Mitte.
 ![alt text](../img/f-schema.jpg)
 
 
@@ -407,7 +413,8 @@ Kein Element ohne Funktion!
 
 - **Typografie und Farbkontrast:**
   - Typografie und Farben passend zur Corporate Identity.
-  - Hohe Kontraste (z. B. schwarz auf weiß) und lesbare Schriftgrößen für unterschiedliche Sehstärken und Monitore.
+  - Hohe Kontraste (z. B. schwarz auf weiß) und lesbare Schriftgrößen
+  für unterschiedliche Sehstärken und Monitore.
 - **Wirkung von Weißraum (Whitespace):**
   - „Weniger ist mehr“: Weißraum strukturiert die Inhalte und lässt sie atmen.
   - Minimalistische Layouts wirken professionell und modern.
@@ -423,7 +430,8 @@ Kein Element ohne Funktion!
 ---
 
 - **Ladezeiten & Performance:**
-  - Kritische 3-Sekunden-Regel: Durchschnittsnutzer springen nach ca. 3 Sekunden Wartezeit ab.
+  - Kritische 3-Sekunden-Regel:
+  Durchschnittsnutzer springen nach ca. 3 Sekunden Wartezeit ab.
   - Technische Fehlerfreiheit ist das Fundament einer positiven User Experience.
 
 ---
