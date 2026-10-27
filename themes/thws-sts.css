@@ -657,6 +657,7 @@ padding-right: 120px;
 section.img-right {
   width: 50%;
   overflow: visible;
+  isolation: isolate;
 }
 
 section.img-right::after {
@@ -684,7 +685,8 @@ section.img-right h3,
 section.img-right ul,
 section.img-right ol,
 section.img-right table,
-section.img-right pre {
+section.img-right pre,
+section.img-right blockquote {
   max-width: 100%;
   width: 100%;
   position: relative;
@@ -699,6 +701,7 @@ section.img-right p:has(img) {
   height: 0 !important;
   margin: 0 !important;
   padding: 0 !important;
+  z-index: 1 !important;
 }
 
 section.img-right h5,

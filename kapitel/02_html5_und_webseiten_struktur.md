@@ -581,6 +581,12 @@ Hurra! Die Domain maiks-mobiler-service.de ist noch frei…
 - **Persönliche Marke (Identität):**
   - Steht eine Person oder ein persönlicher Service im Vordergrund?
   - *Tipp:* Den eigenen Namen integrieren (z. B. `maik-caravan.de`).
+
+![domain-criteria](../img/domain-criteria.png)
+
+
+---
+
 - **Lokaler Bezug (Geographie):**
   - Wird ein Service in einer bestimmten Stadt/Region angeboten?
   - *Tipp:* Ortsnamen einbauen (z. B. `autoinstandsetzung-wuerzburg.de`).
@@ -588,7 +594,6 @@ Hurra! Die Domain maiks-mobiler-service.de ist noch frei…
   - Bieten Sie eine außergewöhnliche oder sehr spezifische Leistung an?
   - *Tipp:* Kern-Keywords verwenden (z. B. `autarker-fahrzeugausbau.de`).
 
-![domain-criteria](../img/domain-criteria.png)
 
 ---
 <!-- _class: img-right -->
@@ -599,7 +604,7 @@ Hurra! Die Domain maiks-mobiler-service.de ist noch frei…
   - Verbessert die Lesbarkeit(z. B. `maiks-mobiler-service.de` statt `maiksmobilerservice.de`).
   - Vermeidet Zweideutigkeiten.
 - **Rechtliche Absicherung:**
-  - Vor Registrierung prüfen: Keine Markenrechte / Firmennamen / geschützte Begriffe
+  - Prüfen:Keine Markenrechte, Firmenname, geschützte Begriffe
 
 ![domain-checklist](../img/domain-checklist.png)
 
@@ -621,7 +626,7 @@ Aber auch spezifische Domains sind möglich:
 ### FTP: Grundlagen & Dateitransfer
 - **Definition:** Das **File Transfer Protocol (FTP)** Netzwerkprotokoll zur Übertragung von Dateien über IP-Netzwerke.
 - **Zustandsbehaftet:** Der Server speichert während einer Sitzung den Zustand (z. B. das aktuelle Arbeitsverzeichnis).
-- **Funktionen:** Upload (Client → Server), Download (Server → Client), Datei- & Verzeichnisverwaltung (Erstellen, Löschen, Umbenennen).
+- **Funktionen:** Upload (Client→Server), Download (Server→Client), Datei- & Verzeichnis New, Delete, Rename
 
 ![ftp-basics](../img/ftp-basics.png)
 
@@ -648,10 +653,10 @@ Aber auch spezifische Domains sind möglich:
 <!-- _class: img-right -->
 
 ### FTP-Sicherheit & FTP-Clients
-- **Das Sicherheitsrisiko:** Klassisches FTP überträgt Zugangsdaten (Benutzer/Passwort) und Dateien **unverschlüsselt** im Klartext.
+- **Das Sicherheitsrisiko:** Klassisches FTP überträgt Zugangsdaten  und Dateien **unverschlüsselt** im Klartext.
 - **Sichere Alternativen (Standard heute):**
   - **SFTP (SSH File Transfer Protocol):** Komplett verschlüsselte Übertragung über SSH (Port 22).
-  - **FTPS (FTP over SSL/TLS):** Verschlüsseltes FTP (Port 21 mit Explicit TLS oder Port 990).
+  - **FTPS (FTP over SSL/TLS):** Verschlüsseltes FTP (Port 21 + Explicit TLS oder Port 990).
 
 ![ftp-security](../img/ftp-security.png)
 
@@ -683,7 +688,9 @@ Aber auch spezifische Domains sind möglich:
 ---
 <!-- _class: img-right -->
 - **Installationstipps für Einsteiger:**
-  - **WICHTIG:** Unter Windows *nicht* in `C:\Program Files` installieren, sondern direkt in `C:\xampp\` ablegen (verhindert Rechteprobleme / UAC-Fehler).
+  - **WICHTIG:** Unter Windows *nicht* in `C:\Program Files` installieren, sondern direkt in `C:\xampp\`
+  ablegen: verhindert
+  Rechteprobleme / UAC-Fehler
   - Setup-Auswahl: Für unsere Zwecke reichen Apache, MySQL und PHP vollkommen aus.
 
 ![xampp-install](../img/xampp-install.png)
@@ -700,13 +707,12 @@ Aber auch spezifische Domains sind möglich:
 
 ---
 
-<!-- _class: img-right -->
 - **Häufiger Fehler (Apache startet nicht):**
   - Port 80 ist oft durch Skype, Teams oder
   IIS blockiert.
   - *Lösung:* Im Control Panel auf *Config* bei Apache klicken, `httpd.conf` öffnen, nach `Listen 80` suchen und auf z. B. `Listen 8080` ändern.
 
-![alt text](../img/xampp-port.jpg)
+![bg right:40%](../img/xampp-port.jpg)
 
 ---
 <!-- _class: img-right -->
@@ -727,7 +733,8 @@ Aber auch spezifische Domains sind möglich:
   - `http://localhost/` oder `http://127.0.0.1/` eingeben.
   - Leitet automatisch auf die XAMPP-Dashboard-Startseite weiter.
 - **Dein Projekt aufrufen:**
-  - Adresse zusammensetzen aus localhost + Projektverzeichnis + Datei:
+  - Adresse zusammensetzen aus
+  localhost + Projektverzeichnis + Datei:
   - `http://localhost/mein-projekt/index.html`
 
 ![xampp-localhost](../img/xampp-localhost.png)
@@ -907,7 +914,7 @@ https://mongoose.ws/binary/
 ### Was du mit den DevTools machen kannst:
 - **HTML & CSS inspizieren:** Live-Änderungen am Layout vornehmen & sofort sehen, wie sich das Design verändert.
 - **Performance messen:** Ladezeiten analysieren & Optimierungspotenziale identifizieren.
-- **Netzwerkverkehr beobachten:** Alle Anfragen an den Server verfolgen & prüfen, ob alle Ressourcen korrekt geladen werden.
+- **Netzwerkverkehr beobachten:** Alle Anfragen an  Server verfolgen & prüfen, ob  Ressourcen korrekt geladen sind
 
 ![devtools](../img/devtools.jpg)
 
@@ -1218,7 +1225,7 @@ Ein voll funktionsfähiges und standardkonformes HTML-Dokument sieht minimal so 
 `<!DOCTYPE html>`
 
 - **Dokumenttyp-Deklaration:** in erster Zeile & teilt Browser mit, dass es sich um HTML5 handelt.
-- früher Angabe der html-Version erforderlich (z.B. `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">`)
+- früher Angabe der html-Version erforderlich 
 - Seit HTML5  `<!DOCTYPE html>`.
 - rigorose Vereinfachung im Sinne von
 Less-is-more
