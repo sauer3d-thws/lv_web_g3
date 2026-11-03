@@ -696,22 +696,22 @@ IMMER auf die eigene Position! Wobei ICH die Datei bin, in der ich mich gerade b
 ---
 
 - **Gleiches Verzeichnis:**
-  * Die Zieldatei liegt im selben Ordner wie das HTML-Dokument.
-  * Code: `<img src="header.jpg" alt="Maiks Service">`
+  - Die Zieldatei liegt im selben Ordner wie das HTML-Dokument.
+  - Code: `<img src="header.jpg" alt="Maiks Service">`
 - **Unterverzeichnis (Abwärts navigieren):**
-  * Die Zieldatei liegt in einem Unterordner (z. B. `img/`).
-  * Code: `<img src="img/header.jpg" alt="Maiks Service">`
+  - Die Zieldatei liegt in einem Unterordner (z. B. `img/`).
+  - Code: `<img src="img/header.jpg" alt="Maiks Service">`
 
 ---
 
 - **Übergeordnetes Verzeichnis (Aufwärts navigieren):**
-  * Mit `../` springen Sie in der Ordnerstruktur eine Ebene höher.
-  * Mehrere Ebenen überspringen Sie mit `../../`.
-  * Code: `<img src="../img/header.jpg" alt="...">`
+  - Mit `../` springen Sie in der Ordnerstruktur eine Ebene höher.
+  - Mehrere Ebenen überspringen Sie mit `../../`.
+  - Code: `<img src="../img/header.jpg" alt="...">`
 - **Absolute Pfadangabe relativ zur Basis-URI:**
-  * Beginnt mit `/` (Slash) und geht vom Hauptverzeichnis (Root) des Webservers aus.
-  * Code: `<img src="/img/header.jpg" alt="...">`
-  * *Hinweis:** Sollte bei lokaler Entwicklung vermieden werden, da oft Pfadfehler entstehen.
+  - Beginnt mit `/` (Slash) und geht vom Hauptverzeichnis (Root) des Webservers aus.
+  - Code: `<img src="/img/header.jpg" alt="...">`
+  - *Hinweis:** Sollte bei lokaler Entwicklung vermieden werden, da oft Pfadfehler entstehen.
 
 
 
@@ -729,12 +729,12 @@ Absolute Pfade existieren systemweit nur ein einziges Mal und sind eindeutig.
 ---
 
 - **Externe Quellen im WWW:**
-  * Verwendung für Links auf fremde Websites oder externe Ressourcen.
-  * Erfordert immer die Angabe des Protokolls (`http` oder `https`) und die vollständige Domain:
-  * Code: `<a href="https://www.maiks-service.de">Maiks Website</a>`
+  - Verwendung für Links auf fremde Websites oder externe Ressourcen.
+  - Erfordert immer die Angabe des Protokolls (`http` oder `https`) und die vollständige Domain:
+  - Code: `<a href="https://www.maiks-service.de">Maiks Website</a>`
 - **Lokale absolute Pfade (Windows):**
-  * Dateipfade mit Laufwerksbuchstabe, z. B. `C:\Projekte\img\header.jpg`.
-  * **Achtung:** Ungeeignet für Webseiten! Diese Pfade existieren auf den Computern der Webseitenbesucher nicht.
+  - Dateipfade mit Laufwerksbuchstabe, z. B. `C:\Projekte\img\header.jpg`.
+  - **Achtung:** Ungeeignet für Webseiten! Diese Pfade existieren auf den Computern der Webseitenbesucher nicht.
 
 ---
 <!-- _class: small-text -->
@@ -793,8 +793,8 @@ HTML5 führt spezifische Strukturelemente ein, um Bereichen eine klare logische 
 - **`<nav>`:** Navigationsbereich (Haupt- und Subnavigation).
 - **`<main>`:** Umschließt den einzigartigen Hauptinhalt einer Webseite.
 - **`<section>` & `<article>`:**
-  * `section` definiert thematische Abschnitte (z. B. Kapitel).
-  * `article` steht für in sich geschlossene, eigenständige Inhalte.
+  - `section` definiert thematische Abschnitte (z. B. Kapitel).
+  - `article` steht für in sich geschlossene, eigenständige Inhalte.
 - **`<aside>`:** Randspalten für Zusatzinfos, Werbung oder Verweise.
 
 
