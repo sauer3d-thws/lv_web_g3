@@ -1398,9 +1398,9 @@ umschließenden Bereich begrenzt
 <!-- _class: twocolumns -->
 #### Wrapper und body (06a)
 - Wrapper fasst den gesamten Inhalt zusammen
-- bildet einen Rahmen um das layout
+- bildet einen Rahmen um das Layout
 - begrenzt maximale breite auf einen definierten Wert
-- zentriert das layout auf der seite
+- zentriert das Layout auf der seite
 - keine semantische Bedeutung, daher DIV
 
 in index.html ist der wrapper das div-Element mit der id="wrapper"

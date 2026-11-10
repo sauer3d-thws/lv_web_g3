@@ -320,7 +320,7 @@ document.getElementById('addBtn').addEventListener('click', () => {
   - Öffnen per Doppelklick (`file:///...`) wird aus Sicherheitsgründen blockiert.
   - **Lösung:** Ausführung über lokalen Server (z. B. VS Code Extension *Live Server*).
 
-> **Beispiel zum Ausprobieren:** Liegt spielfertig unter `Samples/JS/modules-demo.html`.
+> **Beispiel zum Ausprobieren:** Liegt spielfertig unter [`Samples/JS/modules-demo.html`](../Samples/JS/modules-demo.html).
 
 ---
 <!-- _class: structural-->
@@ -577,8 +577,7 @@ const seatText = isVip ? "VIP-Lounge (+ 5 €)" : "Standard-Platz";
 | **Ternär (`? :`)** | **Kompakte Zuweisungen** auf Basis einer Ja/Nein-Frage | Status-Texte, Standardwerte setzen |
 
 **Beispiel zum Ausprobieren:**
-Liegt spielfertig unter
- `Samples/JS/decisions-demo.html`.
+Liegt spielfertig unter [`Samples/JS/decisions-demo.html`](../Samples/JS/decisions-demo.html).
 
 ---
 ## Schleifen & moderne Iteration
@@ -672,7 +671,7 @@ Steuere den Ablauf innerhalb einer laufenden Schleife gezielt:
 ---
 ### Praxis-Check: Schleifen & Iteration im Einsatz
 
-- **Ausführbare Demodatei:** `Samples/JS/loops-demo.html`
+- **Ausführbare Demodatei:** [`Samples/JS/loops-demo.html`](../Samples/JS/loops-demo.html)
 - **Interaktiver Test im Browser:**
   1. **`for...of`:** Liest Werte eines Arrays direkt aus (`const frucht of fruechte`).
   2. **`for...in`:** Inspiziert Schlüssel-Wert-Paare eines Objekts (`const key in produkt`).
@@ -680,7 +679,7 @@ Steuere den Ablauf innerhalb einer laufenden Schleife gezielt:
   4. **`break` & `continue`:** Demonstriert das Überspringen (`continue`) und den Abbruch (`break`).
 
 **Ausprobieren:**
-Öffne *Samples/JS/loops-demo.html* im Browser und teste die Buttons mit Live-Konsolenausgabe!
+Öffne [*Samples/JS/loops-demo.html*](../Samples/JS/loops-demo.html) im Browser und teste die Buttons mit Live-Konsolenausgabe!
 Code und dessen Funktion lesen und verstehen.
 
 ---
@@ -787,14 +786,14 @@ console.log(zaehler()); // 2
 ---
 ### Praxis-Check: Funktionen & Arrow Functions im Einsatz
 
-- **Ausführbare Demodatei:** `Samples/JS/functions-demo.html`
+- **Ausführbare Demodatei:** [`Samples/JS/functions-demo.html`](../Samples/JS/functions-demo.html)
 - **Gezeigte Funktions-Konzepte:**
   1. **Default-Parameter:** `formatierPreis(betrag, waehrung = "€")` schützt vor `undefined`.
   2. **Rest-Parameter:** `berechneSumme(...preise)` fasst beliebige Werte in ein Array zusammen.
   3. **Arrow Functions (`=>`):** Implizite Rückgabe bei `.map(brutto => (brutto / 1.19).toFixed(2))`.
   4. **Closures:** `erstelleWarenkorbTracker()` kapselt den Zählerstand privat im Scope.
 
-> **Ausprobieren:** Öffne `Samples/JS/functions-demo.html` im Browser und teste die Interaktionen!
+> **Ausprobieren:** Öffne [`Samples/JS/functions-demo.html`](../Samples/JS/functions-demo.html) im Browser und teste die Interaktionen!
 
 ---
 <!-- _class: structural-->
@@ -870,7 +869,7 @@ console.log(s.lernen());     // Eigene Methode
 ---
 ### Praxis-Check: Objekte & JSON im Einsatz
 
-- **Ausführbare Demodatei:** `Samples/JS/objects-json-demo.html`
+- **Ausführbare Demodatei:** [`Samples/JS/objects-json-demo.html`](../Samples/JS/objects-json-demo.html)
 - **Gezeigte Kernkonzepte im Code:**
   1. **JS-Objekt & Zugriffe:** Punkt-Notation (`student.name`) vs. Klammer-Notation (`student['id']`) & verschachtelte Objekte.
   2. **`JSON.stringify(obj, null, 2)`:** Wandelt ein JS-Objekt in ein lesbares JSON-String-Format um.
@@ -878,7 +877,7 @@ console.log(s.lernen());     // Eigene Methode
   4. **Objekt-Methoden & `this`:** Funktions-Methoden innerhalb von Objekten mit Zugriff auf eigene Eigenschaften via `this`.
 
 **Ausprobieren:**
-Öffne `Samples/JS/objects-json-demo.html` im Browser und teste die Live-Konsole!
+Öffne [`Samples/JS/objects-json-demo.html`](../Samples/JS/objects-json-demo.html) im Browser und teste die Live-Konsole!
 
 ---
 ### Arrays erstellen & Grundlagen (Array-Literale `[]`)
@@ -952,7 +951,7 @@ const userConfig = { ...basisConfig, fontSize: 18, sidebar: true };
 ---
 ### Praxis-Check: Arrays & Moderne Methoden im Einsatz
 
-- **Ausführbare Demodatei:** `Samples/JS/arrays-demo.html`
+- **Ausführbare Demodatei:** [`Samples/JS/arrays-demo.html`](../Samples/JS/arrays-demo.html)
 - **Gezeigte Kernkonzepte im Code:**
   1. **Grundlagen (Array-Literale `[]`):** Erstellung, 0-basierter Indexzugriff (`staedte[0]`) & `.length`-Eigenschaft.
   2. **`map()` (Transformieren):** Erzeugt neues Array mit berechneten Bruttopreisen (`netto * 1.19`).
@@ -960,7 +959,7 @@ const userConfig = { ...basisConfig, fontSize: 18, sidebar: true };
   4. **`reduce()` (Aggregieren):** Summiert den gesamten Datenbestand schrittweise auf 1 Gesamtwert herunter.
 
 **Ausprobieren:**
-Öffne `Samples/JS/arrays-demo.html` im Browser und teste die interaktiven Buttons!
+Öffne [`Samples/JS/arrays-demo.html`](../Samples/JS/arrays-demo.html) im Browser und teste die interaktiven Buttons!
 
 ---
 <!-- _class: structural-->

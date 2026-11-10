@@ -38,7 +38,7 @@ deren Ergebnisse validieren.
 
 ### Handwerkliche Kodierung (Status Quo):
 Softwareentwicklung als zeilenweises Schreiben von Syntax;
-Fokus auf Implementierungsdetails und das Beheben von Syntax fehlern.
+Fokus auf Implementierungsdetails und das Beheben von Syntaxfehlern.
 
 ### KI-gestützte Orchestrierung (Zukunft):
 Der Entwickler agiert als „Dirigent“ (Orchestrator), der Anforderungen definiert, KI-Modelle steuert und deren Ergebnisse validiert.
