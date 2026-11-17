@@ -135,6 +135,13 @@ in das "Agent-Fenster" von Antigravity.
 ![bg right:40%](../img/09_antigravity_03.jpg)
 
 ---
+
+
+>Prompt:
+
+[Link zur Prompt Vorlage](../Samples/prompt/prompt.txt)
+
+---
 > Dann: Feuer frei!
 
 Allow read access to this path? (mehrfach)

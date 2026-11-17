@@ -2031,10 +2031,10 @@ helvetica,sans-serif;
 <h2 id="mobile-first">Mobile First!</h2>
 <ul>
 <li>44,2 % der Deutschen Internetnutzer<br />
-greifen mobil zu.</li>
+mobil</li>
 <li>Im internationalen Vergleich sind<br />
 dies relativ wenige.</li>
-<li>Weltweit sind es im durschnitt über 53%.</li>
+<li>Weltweit sind es im Durchschnitt über 53%.</li>
 <li>Interessant: Bei Mobile steigt KI Nutzung</li>
 <li>Desktop gewinnt an Boden im Web</li>
 </ul>
@@ -2060,16 +2060,15 @@ dies relativ wenige.</li>
 <ul>
 <li><strong>Was sind Media Queries?</strong>
 <ul>
-<li>Ermöglichen, CSS-Regeln nur dann anzuwenden, wenn bestimmte Bedingungen (wie Bildschirmbreite) erfüllt sind.</li>
-<li>Webseite passt sich automatisch an Smartphones, Tablets, Desktops an</li>
+<li>Ermöglichen, CSS-Regeln nur dann anzuwenden, wenn bestimmte Bedingungen<br />
+(wie Bildschirmbreite) erfüllt sind.</li>
+<li>Webseite passt sich automatisch an Smartphones,<br />
+Tablets, Desktops an</li>
 </ul>
 </li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-keyword">@media</span> (<span class="hljs-attribute">max-width</span>: <span class="hljs-number">768px</span>) {
-  <span class="hljs-selector-tag">body</span> {
-    <span class="hljs-attribute">background-color</span>: lightblue;
-  }
-}
+  <span class="hljs-selector-tag">body</span> { <span class="hljs-attribute">background-color</span>: lightblue;}}
 </code></pre>
 <p><img src="../img/media_queries_concept.png" alt="Media Queries Concept" /></p>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>
@@ -2121,7 +2120,7 @@ dies relativ wenige.</li>
 <h4 id="logische-operatoren-in-media-queries">Logische Operatoren in Media Queries**</h4>
 <ul>
 <li>Bedingungen lassen sich mit <code>and</code>, <code>not</code>, und <code>only</code> verknüpfen.</li>
-<li>Man kann auch Kommas <code>,</code> verwenden (entspricht einem logischen &quot;ODER&quot;).</li>
+<li>Man kann auch Kommata <code>,</code> verwenden (entspricht einem logischen &quot;ODER&quot;).</li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-comment">/* Bildschirm UND mindestens 1024px breit */</span>
 <span class="hljs-keyword">@media</span> screen <span class="hljs-keyword">and</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">1024px</span>) {
@@ -2213,7 +2212,7 @@ Diese ändert ihr Layout sowie die Hintergrundfarbe dynamisch je nach verfügbar
 <li>wrapper zurücksetzen</li>
 <li>headerbild ersetzen</li>
 <li>Bild zentrieren</li>
-<li>Höhedes headers reduzieren</li>
+<li>Höhe des Headers reduzieren</li>
 </ul>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-css"><span class="hljs-selector-id">#wrapper</span> {
 <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#FFFFFF</span>;
@@ -2355,7 +2354,7 @@ Schrittweises Anpassen des Designs, immer dann, wenn &quot;etwas nicht passt&quo
 <ul>
 <li>Smartphones @media (min-width: 576px) { ... }</li>
 <li>Tablets @media (min-width: 768px) { ... }</li>
-<li>Desktops @media (min-width: 992px) { ... }</li>
+<li>Desktops @media (min-width: 1000px) { ... }</li>
 <li>Large desktops @media (min-width: 1200px) { ... }</li>
 </ul>
 <footer><a href="../index.html">zurück zur Übersicht</a></footer>

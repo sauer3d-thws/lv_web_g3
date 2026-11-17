@@ -1,0 +1,72 @@
+Analysiere die Datei "index.html".
+Erstelle dann eine neue html-Datei in einem neuen Unterordner "html" neben der index.html mit dem Namen "mobiles-Leben-im-LKW.html".
+Die neue Datei soll den gleichen Aufbau wie die index.html haben, jedoch soll im main-Bereich ein neuer Inhalt sein.
+Zum Inhalt:
+Folgender Inhalt soll im main-Bereich stehen:
+"Home sweet home
+Da mir das Leben in Immobilien schnell zu statisch wurde entschloss ich mich 2010 zum Kauf meiner ersten eigenen Mobilie.
+Geprägt von zahlreichen Reisen in VW Bullis sollte nun etwas mit mehr Komfort her, in dem es sich auch langfristig gut Leben ließ.
+Ich beschloss meinen VW T3 mit einem Wohnwagen zu verkuppeln!
+Noch Frischling auf dem Gebiet der Caravan-Technik lebte ich nun ein halbes Jahr ohne Strom – das heißt jeden Abend romantisches Candlelight-Dinner und Lesen mit Kopflampe.
+Aber auch Akkus laden an der Tankstelle und immer wenn ich ihn brauchte war der Laptop natürlich nicht geladen.
+Ein wenig mehr Luxus wollte ich dann doch.
+Also restaurierte ich nebenher einen VW LT. Ich verbaute eine Solaranlage, einen Kompressorkühlschrank, eine Gasheizung… und am Ende war es ein kleines Haus aus Rädern.
+	Die Jungfernfahrt führte mich nach Marokko, wo ich die Offroadtauglichkeit meines neuen Lebensabschnittsgefährts testete.
+Nach all der Mühe war ich froh, so ein gemütliches und reisetaugliches Fahrzeug mein Eigen nennen zu können und freut mich schon auf viele spannende Touren…
+
+… nur kommt es meistens anders als mensch denkt.
+Nach nur 1 ½ Jahren wurde ich ein einen Verkehrsunfall verwickelt und der blaue LT verwandelte sich vom durchrestaurierten Oldtimer zum Totalschaden.
+
+Die Leute sagen ja, mensch solle immer die positiven Aspekte des Lebens betrachten – immerhin ist so ein 3,5-tonner ja auch nur ein Kompromiss. Also absolvierte ich einen LKW – Führerschein und erstand ein neues Fahrzeug – ein Mercedes 814, ein richtiger LKW!
+Nach ein paar Jahren kristallisierte sich allerdings heraus, dass Festanstellung in einer Caravan Werkstatt und  mobiles Leben nicht so recht zusammen passen.
+Ein größerer LKW musste her – denn all mein Werkzeug brauchte nun einen Platz, als Beginn meiner ungebundenen Selbstständigkeit.
+Es folgten 1 ½ Jahre Vollrestauration eines alten Mercedes 1419 mit vielen Höhen und Tiefen, aber einem Ergebnis, dass sich sehen lässt.
+
+
+Die Fahrer*innenkabine
+Mit Partnerin und zweitem Hund war es natürlich notwendig einen LKW mit  Fernfahrer*innenkabine zu kaufen.
+Die Hunde können während der Fahrt entspannt auf der Rückbank liegen. Alternativ ist es auch möglich vier Menschen auf den Sitzen zu befördern.
+Und umgebaut zum Doppelstockbett wird die Fahrer*innenkabine zum Gästezimmer.
+
+
+Hell's kitchen
+In meiner Küche möchte ich auf nichts verzichten. 
+Daher gibt es aus dem Kompressorkühlschrank immer kühles Bier (oder Limo) und aus dem Gas-Backofen heiße Lasagne.
+Vegane und abwechslungsreiche Ernährung ist mir sehr wichtig und bei jeder Reise wird das Gewürzsortiment um landestypische Geschmäcker erweitert.
+Am besten entdeckt mensch fremde Länder durch ihre Küche!
+Wohnen und Schlafen
+Wichtigster Aspekt, um sich richtig heimisch zu fühlen ist ein vernünftiges Bett.
+Da werden keine Kompromisse gemacht.
+Semi-gemütliche Klappbetten, wie in vielen Wohnmobilen üblich, kommen mir nicht in den Laster.
+Und nach einem langen Arbeitstag dürfen auf der gemütlichen Sofa-Ecke auch mal die Füße hochgelegt werden.
+
+Das Büro
+Auch im Laster lässt sich Ordnung halten.
+Gut sortiert lassen sich diverse Reparaturleitfäden, Fahrzeugdaten und Betriebsanleitungen leicht wiederfinden.
+
+Die sanitären Anlagen
+Um lange autark unterwegs sein zu können habe ich 2 x 200 l Frischwassertanks verbaut.
+Damit kann gespült und geduscht werden. Dabei wird das Wasser für die Dusche per Gas-Durchlauferhitzer erwärmt.
+Von Chemietoiletten halte ich wenig. Daher habe ich eine Trockentrenntoilette gebaut.
+Vorn ein großer Trichter für's Flüssige und hinten ein Behälter für's Feste. Nach dem großen Geschäft einfach Sägespäne drauf und Klodeckel zu.
+Mit Geruchsentwicklung habe ich keinerlei Probleme und die Toilette muss nur ca. alle 2 Wochen entleert werden – alles ganz ohne aggressive Chemie!
+
+Die Werkstatt
+Werkzeuge und Arbeitsmaterialien habe ich immer dabei – verstaut in den Kellerkästen. Von A wie Abzieher bis Z wie Zahnriemenspannungsprüfer findet mensch mit ein wenig Geduld alles – bereit zum Einsatz am Kund*innenfahrzeug.
+
+Die Garage
+Ein bisschen Spaß muss sein – daher befindet sich im Heck noch meine kleine, geländegängige Crossmaschine. Und natürlich ein Fahrrad für sportliche Touren durch schöne Landschaften.
+"
+Unterteile den Text in einzelne article mit den angegebenen Unterüberschriften und füge jeweils das passende Bild mit der css-Klasse  "bildImFliesstext" aus dem img-Ordner zu:
+"dasBuero.jpg
+dasFuehrerHaus.jpg
+dieGarage.jpg
+dieSanitaerenAnlagen.jpg
+dieWerkstatt.jpg
+HomeSweetHome.txt
+Kopiervorlage.txt
+maiksLKWaussen.jpg
+willkommenInDerKueche.jpg
+wohnenUndSchlafen.jpg"
+
+Jedes dieser Bilder hat ein entsprechend größeres Bild im Unterordner img/1600 mit 1600 Pixeln Breite. Verlinke nun das eingefügte Bild über einen href mit dem entsprechenden Link im Unterordner, so dass man das Bild bei einem Klick auf die Abbildung vergrößert laden kann.

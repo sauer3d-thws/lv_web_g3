@@ -858,7 +858,7 @@ class Student extends Person {
 
     lernen() {
         return `${this.name} (Matrikel: ${this.matrikelnummer}) lernt JS.`;
-    }
+    }ng.md 
 }
 
 const s = new Student("Lisa", 632217);

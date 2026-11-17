@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bewertung Meilenstein 1 · Webprogrammierung · THWS Geovisualisierung</title>
+  <style>
+    :root {
+      --thws-orange: #FF6A00;
+      --thws-dark-orange: #e05e00;
+      --thws-navy: #0F172A;
+      --thws-blue: #005A9C;
+      --bg-body: #F8FAFC;
+      --bg-card: #FFFFFF;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --border-color: #E2E8F0;
+      --badge-best-bg: #DCFCE7;
+      --badge-best-text: #166534;
+      --badge-good-bg: #E0F2FE;
+      --badge-good-text: #075985;
+      --badge-mid-bg: #FEF3C7;
+      --badge-mid-text: #92400E;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      font-size: 14.5px;
+      padding: 24px 16px 60px 16px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header.report-header {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      padding: 32px 36px;
+      border-radius: 14px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      border-left: 6px solid var(--thws-orange);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .header-tag {
+      display: inline-block;
+      background: rgba(255, 106, 0, 0.2);
+      color: #FFA057;
+      border: 1px solid rgba(255, 106, 0, 0.4);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .header-actions button {
+      background-color: var(--thws-orange);
+      color: #FFFFFF;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.15s ease;
+    }
+
+    .header-actions button:hover {
+      background-color: var(--thws-dark-orange);
+    }
+
+    h1.report-title {
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+      line-height: 1.25;
+    }
+
+    p.report-subtitle {
+      font-size: 15px;
+      color: #CBD5E1;
+      margin-bottom: 20px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 12px 16px;
+      border-radius: 8px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #94A3B8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .stat-value span.highlight {
+      color: #FFA057;
+    }
+
+    /* Sticky Navigation */
+    nav.quick-nav {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+      background: #FFFFFF;
+      padding: 10px 16px;
+      border-radius: 10px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+    }
+
+    nav.quick-nav span.nav-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      white-space: nowrap;
+      margin-right: 6px;
+    }
+
+    nav.quick-nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color 0.15s ease, color 0.15s ease;
+      background: #F1F5F9;
+    }
+
+    nav.quick-nav a:hover {
+      background-color: var(--thws-orange);
+      color: #FFFFFF;
+    }
+
+    /* Notice Callout */
+    .callout {
+      background-color: #EFF6FF;
+      border-left: 4px solid #3B82F6;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: #1E40AF;
+      font-size: 14.5px;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .callout-body {
+      color: #1E3A8A;
+      font-size: 13.5px;
+    }
+
+    /* Section Styling */
+    section.report-section {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    h2.section-heading {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--thws-navy);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    h2.section-heading::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 18px;
+      background-color: var(--thws-orange);
+      border-radius: 2px;
+    }
+
+    /* Tables */
+    .table-container {
+      overflow-x: auto;
+      margin-top: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #F8FAFC;
+      color: #334155;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: middle;
+    }
+
+    tbody tr:hover {
+      background-color: #F1F5F9;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .font-semibold { font-weight: 600; }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .badge-best { background: var(--badge-best-bg); color: var(--badge-best-text); border: 1px solid #BBF7D0; }
+    .badge-good { background: var(--badge-good-bg); color: var(--badge-good-text); border: 1px solid #BAE6FD; }
+    .badge-mid  { background: var(--badge-mid-bg); color: var(--badge-mid-text); border: 1px solid #FDE68A; }
+    .badge-gray { background: #F1F5F9; color: #475569; border: 1px solid #CBD5E1; }
+
+    /* Student Cards Grid */
+    .students-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 16px;
+    }
+
+    .student-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      scroll-margin-top: 80px;
+    }
+
+    .student-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+
+    .student-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 14px;
+    }
+
+    .student-title-area h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--thws-navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .student-meta {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .student-meta code {
+      background: #F1F5F9;
+      color: #0F172A;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    .criteria-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .criteria-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 12px;
+      font-size: 13.5px;
+      line-height: 1.5;
+      padding: 6px 8px;
+      border-radius: 6px;
+      background: #F8FAFC;
+    }
+
+    .criteria-tag {
+      font-weight: 700;
+      color: #334155;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .criteria-points {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--thws-blue);
+    }
+
+    .criteria-desc {
+      color: #1E293B;
+    }
+
+    .recommendation-box {
+      background-color: #FFFBEB;
+      border-left: 4px solid #F59E0B;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #78350F;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .recommendation-box strong {
+      color: #92400E;
+      white-space: nowrap;
+    }
+
+    /* Protocol & Reflection */
+    .protocol-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .protocol-item {
+      display: flex;
+      gap: 12px;
+      font-size: 13.5px;
+    }
+
+    .protocol-time {
+      font-weight: 700;
+      color: var(--thws-blue);
+      font-family: ui-monospace, monospace;
+      white-space: nowrap;
+      min-width: 130px;
+    }
+
+    .reflection-card {
+      background: #F8FAFC;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      border-left: 3px solid var(--thws-blue);
+    }
+
+    .reflection-card h4 {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--thws-navy);
+      margin-bottom: 4px;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background-color: #FFFFFF;
+        color: #000000;
+        padding: 0;
+        font-size: 11pt;
+      }
+      .quick-nav, .header-actions {
+        display: none !important;
+      }
+      header.report-header {
+        box-shadow: none;
+        border: 1px solid #CCCCCC;
+        background: #FFFFFF !important;
+        color: #000000 !important;
+      }
+      h1.report-title, p.report-subtitle, .stat-value, .stat-label {
+        color: #000000 !important;
+      }
+      .stat-card {
+        border: 1px solid #DDD;
+      }
+      section.report-section {
+        box-shadow: none;
+        border: none;
+        padding: 12px 0;
+      }
+      .student-card {
+        box-shadow: none;
+        border: 1px solid #DDD;
+        page-break-inside: avoid;
+        margin-bottom: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header class="report-header">
+    <div class="header-top">
+      <div>
+        <span class="header-tag">THWS Geovisualisierung · WS 2026/2027</span>
+      </div>
+      <div class="header-actions">
+        <button onclick="window.print()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Drucken / PDF-Export
+        </button>
+      </div>
+    </div>
+
+    <h1 class="report-title">Portfolio Meilenstein 1: Bewertungsbericht</h1>
+    <p class="report-subtitle">Konzept, Wireframe & SDD-Spezifikation · Modul Webprogrammierung (6322170) · Dozent: Stefan Sauer</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Abgaben geprüft</div>
+        <div class="stat-value">10 <span class="highlight">Studierende</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Maximal erreichbar</div>
+        <div class="stat-value">15,0 <span class="highlight">Punkte (15 %)</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Punktedurchschnitt</div>
+        <div class="stat-value">12,4 <span class="highlight">/ 15,0 Pkt. (Ø 1,9)</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Bestehensquote</div>
+        <div class="stat-value">100 % <span class="highlight">(2x Bestnote 1,0 ★)</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quick Navigation -->
+  <nav class="quick-nav">
+    <span class="nav-title">Navigation:</span>
+    <a href="#matrix">1. Matrix</a>
+    <a href="#overview">2. Übersicht</a>
+    <a href="#student_001">st_001</a>
+    <a href="#student_002">st_002 ★</a>
+    <a href="#student_003">st_003</a>
+    <a href="#student_004">st_004</a>
+    <a href="#student_005">st_005</a>
+    <a href="#student_006">st_006</a>
+    <a href="#student_007">st_007 ★</a>
+    <a href="#student_008">st_008</a>
+    <a href="#student_009">st_009</a>
+    <a href="#student_010">st_010</a>
+    <a href="#reflection">4. Fazit</a>
+    <a href="#protocol">5. Protokoll</a>
+  </nav>
+
+  <!-- Notice Callout -->
+  <div class="callout">
+    <div class="callout-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+      Wichtige Bewertungsrichtlinie (Mündliche Dozenten-Freigabe):
+    </div>
+    <div class="callout-body">
+      Gemäß mündlicher Freigabe im Modul sind sowohl klassische <strong>mehrseitige Webauftritte</strong> (z. B. mind. 3 separate HTML-Dateien) als auch <strong>durchdachte One-Pager mit klar strukturierten semantischen Sektionen</strong> (z. B. Hero, Über mich, Projekte, Kontakt) vollwertig anerkannt. Es erfolgen keinerlei Punktabzüge für die Wahl des Architekturformats.
+    </div>
+  </div>
+
+  <!-- Section 1: Matrix -->
+  <section class="report-section" id="matrix">
+    <h2 class="section-heading">1. Kriterien- und Bewertungsmatrix (15 Punkte Maximal)</h2>
+    <p style="color: var(--text-muted); font-size: 13.5px; margin-bottom: 12px;">
+      Die Bewertung erfolgt anhand der fünf in der Portfolio-Aufgabenstellung definierten Schwerpunkte. Der gestalterische Aspekt (K3) fließt mit 3,5 Punkten (23,3 %) gleichberechtigt ein.
+    </p>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">Kriterium</th>
+            <th class="text-center" style="width: 15%;">Max. Punkte</th>
+            <th>Didaktische Anforderungen & Bewertungsfokus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="font-semibold">K1: Sitemap & Inhaltskonzept</td>
+            <td class="text-center font-semibold" style="color: var(--thws-blue);">3,0 Pkt.</td>
+            <td>Mindestens 3 logische Unterseiten <strong>ODER</strong> One-Page-Architektur mit semantischen Sektionen (Hero, Projekte, Skills, Kontakt). Thematischer Bezug zur Geovisualisierung / Kartografie.</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">K2: Wireframing (Desktop & Mobile)</td>
+            <td class="text-center font-semibold" style="color: var(--thws-blue);">3,5 Pkt.</td>
+            <td>Vollständige Skizzen für <strong>Desktop UND Smartphone</strong> (Mobile-First-Prinzip). Saubere Komponenten-Transformation (Header, Navigation, Grids, Spalten, Footer).</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">K3: Design-System & Gestalterischer Aspekt</td>
+            <td class="text-center font-semibold" style="color: var(--thws-blue);">3,5 Pkt.</td>
+            <td><strong>Design-System:</strong> Farbpalette (Hex/HSL), Schrifthierarchie, Bildsprache.<br><strong>Gestaltung:</strong> Visuelle Harmonie, Kontraste (WCAG 2.1), Layout-Rhythmus, Ästhetik.</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">K4: Recherche & Inspiration</td>
+            <td class="text-center font-semibold" style="color: var(--thws-blue);">2,0 Pkt.</td>
+            <td>2–3 dokumentierte Best-Practice-Vorbilder im Netz mit konkreter Analyse von Navigation, Farbharmonie, Typografie und Interaktionsmustern.</td>
+          </tr>
+          <tr>
+            <td class="font-semibold">K5: SDD-Spezifikation (spec.md)</td>
+            <td class="text-center font-semibold" style="color: var(--thws-blue);">3,0 Pkt.</td>
+            <td>Strukturierte, maschinenlesbare <code>spec.md</code> zur Steuerung von KI-Prompting; Persona, Breakpoints, geplante Geodaten-Features für Meilenstein 3 (Leaflet / GeoJSON).</td>
+          </tr>
+          <tr style="background-color: #F8FAFC; font-weight: 700;">
+            <td>GESAMT</td>
+            <td class="text-center" style="color: var(--thws-orange);">15,0 Pkt.</td>
+            <td>Meilenstein 1 (15 % der Gesamtprüfungsleistung des Moduls)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 2: Overview Table -->
+  <section class="report-section" id="overview">
+    <h2 class="section-heading">2. Tabellarische Punkteübersicht (student_001 bis student_010)</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Student ID</th>
+            <th class="text-center">K1 (3,0)</th>
+            <th class="text-center">K2 (3,5)</th>
+            <th class="text-center">K3 (3,5)</th>
+            <th class="text-center">K4 (2,0)</th>
+            <th class="text-center">K5 (3,0)</th>
+            <th class="text-center">Gesamt (15,0)</th>
+            <th class="text-center">Note / Prädikat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="#student_001" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_001</a></td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">3,5</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">1,5</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center font-semibold">13,5</td>
+            <td class="text-center"><span class="badge badge-good">1,3 · Sehr gut</span></td>
+          </tr>
+          <tr style="background-color: #F0FDF4;">
+            <td><a href="#student_002" style="color: var(--badge-best-text); font-weight: 700; text-decoration: none;">student_002 ★</a></td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">3,5</td>
+            <td class="text-center">3,5</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center font-semibold" style="color: var(--badge-best-text);">15,0</td>
+            <td class="text-center"><span class="badge badge-best">1,0 · Bestnote ★</span></td>
+          </tr>
+          <tr>
+            <td><a href="#student_003" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_003</a></td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">1,5</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center font-semibold">10,5</td>
+            <td class="text-center"><span class="badge badge-mid">3,0 · Befriedigend</span></td>
+          </tr>
+          <tr>
+            <td><a href="#student_004" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_004</a></td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">3,5</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">1,5</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center font-semibold">13,5</td>
+            <td class="text-center"><span class="badge badge-good">1,3 · Sehr gut</span></td>
+          </tr>
+          <tr>
+            <td><a href="#student_005" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_005</a></td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center font-semibold">13,5</td>
+            <td class="text-center"><span class="badge badge-good">1,3 · Sehr gut</span></td>
+          </tr>
+          <tr>
+            <td><a href="#student_006" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_006</a></td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">1,5</td>
+            <td class="text-center">1,5</td>
+            <td class="text-center font-semibold">10,0</td>
+            <td class="text-center"><span class="badge badge-mid">3,3 · Befriedigend</span></td>
+          </tr>
+          <tr style="background-color: #F0FDF4;">
+            <td><a href="#student_007" style="color: var(--badge-best-text); font-weight: 700; text-decoration: none;">student_007 ★</a></td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">3,5</td>
+            <td class="text-center">3,5</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center font-semibold" style="color: var(--badge-best-text);">15,0</td>
+            <td class="text-center"><span class="badge badge-best">1,0 · Bestnote ★</span></td>
+          </tr>
+          <tr>
+            <td><a href="#student_008" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_008</a></td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">3,0</td>
+            <td class="text-center">1,5</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center font-semibold">12,5</td>
+            <td class="text-center"><span class="badge badge-good">2,0 · Gut</span></td>
+          </tr>
+          <tr>
+            <td><a href="#student_009" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_009</a></td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">1,0</td>
+            <td class="text-center font-semibold">10,0</td>
+            <td class="text-center"><span class="badge badge-mid">3,3 · Befriedigend</span></td>
+          </tr>
+          <tr>
+            <td><a href="#student_010" style="color: var(--thws-blue); font-weight: 700; text-decoration: none;">student_010</a></td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">2,0</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center">1,0</td>
+            <td class="text-center">2,5</td>
+            <td class="text-center font-semibold">10,5</td>
+            <td class="text-center"><span class="badge badge-mid">3,0 · Befriedigend</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Section 3: Detailed Student Evaluations -->
+  <section class="report-section" id="students">
+    <h2 class="section-heading">3. Ausführliche Einzelbewertungen mit Begründung</h2>
+    <div class="students-container">
+
+      <!-- student_001 -->
+      <article class="student-card" id="student_001">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_001</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec.md (44 Zeilen)</code>, <code>Beispielseiten_student_001.pdf</code>, <code>Wireframes_student_001.pdf (16 Seiten)</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-good" style="font-size: 13.5px; padding: 4px 10px;">13,5 / 15,0 Pkt. · Sehr gut (1,3)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">3,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr reichhaltige Struktur mit 7 Unterseiten (<code>index.html</code>, <code>aboutme.html</code>, <code>fotografie.html</code>, <code>ehrenamt.html</code>, <code>studium.html</code>, <code>praktikas.html</code>, <code>impressum.html</code>). Die Idee, eine Deutschlandkarte mit interaktiven Pins als Portal zu den Unterseiten zu nutzen, ist thematisch hervorragend.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">3,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Beeindruckender Umfang von 16 Seiten Wireframes, die alle Unterseiten sowohl in der Desktop- als auch in der mobilen Ansicht mit Bedienelementen, Karussells und Popups konsistent illustrieren.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">3,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Klares Farbschema (Dunkelrot <code>#730002</code>, Weiß, Schwarz) und vertikale Überschriftenboxen. <em>Abzug:</em> Die Typografie ist mit fünf verschiedenen Schriftfamilien („Century Gothic“, „Swiss721“, „Nirmala UI“, „Gill Sans MT“) überfrachtet und unklar hierarchisiert; hier sollte im Code auf maximal 2 Webfonts fokussiert werden.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">1,5 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              4 gute Referenzseiten in der PDF genannt (<code>tour-kyrgyzstan.com</code>, <code>nikolaradeski.com</code>, <code>mrk.de</code>, <code>vwlab.io</code>), jedoch ohne textliche Erläuterung der gestalterischen Übertragungsleistung.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr detailliert bei UI-Abläufen und Touch-Targets (44x44px). Die Geodaten-Struktur für MS3 (Leaflet/GeoJSON-Schema) sollte noch formaler ausformuliert werden.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Schriftauswahl auf 2 harmonische Webfonts (z. B. via Google Fonts lokal) konsolidieren und die HTML5-Semantik für die vielen Unterseiten schlank halten.</span>
+        </div>
+      </article>
+
+      <!-- student_002 -->
+      <article class="student-card" id="student_002" style="border-left: 4px solid #16A34A;">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_002 <span style="color: #F59E0B;">★</span></h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec.md (203 Zeilen)</code>, <code>Inhaltskonzept.pdf (3 Seiten)</code>, <code>Wireframe.pdf (4 Seiten)</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-best" style="font-size: 13.5px; padding: 4px 10px;">15,0 / 15,0 Pkt. · Sehr gut / Bestnote ★ (1,0)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">3,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Exzellente One-Page-Struktur mit perfekt durchdachten Sektionen (Hero, Über mich, Projekte, Fähigkeiten, Kontakt, Footer). Nach mündlicher Freigabe von One-Pagern mit Sektionen volle Punktzahl für diese vorbildliche Gliederung.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">3,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Herausragende Wireframe-Qualität auf Agenturniveau! Sowohl Desktop als auch Smartphone sind mit echten Layoutproportionen, typografischer Hierarchie und realen Inhalten perfekt durchdacht.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">3,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Gestalterisches Kurs-Highlight: Atmosphärisches Dunkelgrün (<code>#002418</code>) kombiniert mit topografischen Würzburg-Höhenlinien in Beige-Bronze (<code>#917463</code>) und präzisen orangen Akzenten (<code>#FF6A00</code>). Perfekt abgestimmte Typografie (Poppins + Spectral lokal mit Fallbacks).
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">2,0 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Mustergültig dokumentiert mit Screenshots und methodischer Begründung (<code>abatable.com</code>, <code>tour-kyrgyzstan.com</code>).
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">3,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Vorbildlich strukturierte 203-zeilige <code>spec.md</code> mit YAML-Token-Definitionen, Parallax-Regeln und klaren Gestaltungsrichtlinien. Eignet sich ideal für promptgestützte KI-Workflows.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box" style="background-color: #F0FDF4; border-color: #16A34A; color: #166534;">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>In HTML5 konsequent semantische <code>&lt;section&gt;</code>- und <code>&lt;article&gt;</code>-Tags nutzen und Sprungmarken-Navigation per CSS (<code>scroll-behavior: smooth</code>) umsetzen.</span>
+        </div>
+      </article>
+
+      <!-- student_003 -->
+      <article class="student-card" id="student_003">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_003</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>student_003_spec.md (49 Zeilen)</code>, <code>student_003_Skizzeundinspo.docx</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-mid" style="font-size: 13.5px; padding: 4px 10px;">10,5 / 15,0 Pkt. · Befriedigend (3,0)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              4 Unterseiten geplant (<code>index.html</code> Fotos, <code>projekte.html</code>, <code>plakate.html</code>, <code>ueber-mich.html</code>). Originelle Metapher der Aktenordner-/Karteikarten-Navigation. Impressum/Datenschutz fehlt noch in der Struktur.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">2,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Skizzen im Word-Dokument vorhanden, jedoch eher skizzenhaft und ohne maßhaltige Gegenüberstellung von Desktop- und Mobilansichten.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">2,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Das Retro-/Papier-Konzept hat Charme. Farbwerte sind benannt (Dunkelgrün, Rot, Creme, Dunkelblau). Typografie bleibt jedoch unkonkret („Serifen Schrift – noch nicht hundert pro entschieden“). Visuell noch unausgereift.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">1,5 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              2 passende Inspirationen (<code>pxpush.com</code>, <code>illoca.unseen.co</code>) mit Notizen zum Papier- und Karteikarten-Look im Word-Dokument dokumentiert.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">2,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Mit 49 Zeilen recht kurz. Breakpoints sind genannt, aber Abschnitt 4 (Geodaten & Leaflet) fehlt komplett. Für die KI-Steuerung fehlen detaillierte Selektoren und Komponentenbeschreibungen.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Schrifthierarchie verbindlich festlegen (z. B. eine markante Serif-Schrift für Überschriften und eine neutrale Sans-Serif für Fließtext) und Wireframes in echtes semantisches CSS-Grid übersetzen.</span>
+        </div>
+      </article>
+
+      <!-- student_004 -->
+      <article class="student-card" id="student_004">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_004</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>Spec.md (147 Zeilen)</code>, <code>Desktop.pdf (5 Seiten)</code>, <code>Handy.pdf (5 Seiten)</code>, <code>Farbpalette.png</code>, <code>Inspirationen.txt</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-good" style="font-size: 13.5px; padding: 4px 10px;">13,5 / 15,0 Pkt. · Sehr gut (1,3)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">3,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Vorbildliche Seitenstruktur mit 4 logisch getrennten Seiten (<code>index.html</code>, <code>über-mich.html</code>, <code>projekte.html</code>, <code>kontakt.html</code> inkl. Impressum).
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">3,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Exzellente, 5-seitige farbige Layout-Wireframes jeweils separat für Desktop und Handy. Die Komponenten-Transformation ins mobile Format ist vorbildlich gelöst.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">3,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr ästhetisches Grafikkonzept mit asymmetrischen Kreisbögen und abgerundeten Kartenflächen. Schöne Farbharmonie (<code>#2e4057</code>, <code>#eeae3e</code>, <code>#E0E0E2</code>). <em>Leichter Abzug:</em> Schriften <code>Dutch801 Rm BT</code> und <code>Bahnschrift</code> sind systemspezifisch – müssen im Web durch lizenzfreie, lokal gehostete Webfonts (z. B. Google Fonts WOFF2) ersetzt werden.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">1,5 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              4 gute URLs in <code>Inspirationen.txt</code>, aber ohne begleitende analytische Dokumentation im Spec-Dokument.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr ausführliche Spezifikation (147 Zeilen) mit sauberer Deklaration offener Baustellen. Konkrete Geodaten-Planung für Meilenstein 3 sollte ergänzt werden.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Die gewählte Typografie auf frei verfügbare Webfonts (z. B. Playfair Display / Inter) umstellen und lokal im Projektverzeichnis ablegen (DSGVO-Pflicht!).</span>
+        </div>
+      </article>
+
+      <!-- student_005 -->
+      <article class="student-card" id="student_005">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_005</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec.md (40 Zeilen)</code>, <code>Konzept.pdf (3 Seiten)</code>, <code>Wireframe.pdf (4 Seiten)</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-good" style="font-size: 13.5px; padding: 4px 10px;">13,5 / 15,0 Pkt. · Sehr gut (1,3)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">3,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              4 Unterseiten (<code>index.html</code>, <code>projekte.html</code>, <code>ueber-mich.html</code>, <code>kontakt.html</code>) mit starkem Geovis-Bezug (QGIS, ArcGIS, 3ds Max, Webmapping).
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">3,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Saubere 4-seitige Wireframe-PDF mit Desktop- und Mobilansichten für Start- und Projektseite. Funktional und aufgeräumt, gestalterisch sachlich-nüchtern.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">3,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Harmonische maritime Farbpalette („Deep Aqua“ <code>#003B46</code>, <code>#66A5AD</code>). Professionell definiertes 8px-Spacingsystem und solide Typografie (<code>Inter</code> + <code>Roboto</code>).
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">2,0 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Perfekt: 3 fachspezifische Kartografie- und Datenvorbilder analysiert (Mapbox Gallery, MapTiler Showcase, Observable Plot).
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr präzise und disziplinierte <code>spec.md</code>. Breakpoints (480px, 768px, 1100px) und Datenstrukturen gut vorbereitet.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Das etwas strenge Kasten-Layout durch mehr typografische Akzente und subtile CSS-Transitions (z. B. bei Hover über Projektkarten) visuell dynamisieren.</span>
+        </div>
+      </article>
+
+      <!-- student_006 -->
+      <article class="student-card" id="student_006">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_006</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec_student_006.md (29 Zeilen)</code>, <code>Meilenstein1_Abgabe_student_006.png (Canvas-Skizze)</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-mid" style="font-size: 13.5px; padding: 4px 10px;">10,0 / 15,0 Pkt. · Befriedigend (3,3)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              4 Seiten geplant (index, geo-projekte, digital-art, kontakt). Interessante Symbiose aus Vermessungswesen und digitaler Kunst.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">2,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Nur die Startseite ist als Desktop- und Mobilansicht im Übersichtsbild skizziert. Für die anderen drei Unterseiten fehlen Wireframes vollständig.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">2,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Gute Farbpalette (<code>#3e363f</code>, <code>#ba6e6e</code>, <code>#01ffd9</code>) und Schriftart Figtree. Kreative Skizzen und Icons, aber das Gesamtbild wirkt noch fragmentiert.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">1,5 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              3 Links (<code>fivecell.pl</code>, <code>explore.org/fat-bear-week</code>, <code>esri.com</code>) mit Hinweisen am Fuß des Canvas notiert.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">1,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr knapp (29 Zeilen). Widerspricht der Aufgabenstellung durch Festlegung auf „Desktop-First“. Für präzises KI-Prompting fehlen wesentliche Spezifikationsdetails.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Dringend auf den geforderten Mobile-First-Ansatz umschwenken und vorab die fehlenden Layoutstrukturen der Unterseiten aufskizzieren, bevor mit dem HTML/CSS-Coding begonnen wird.</span>
+        </div>
+      </article>
+
+      <!-- student_007 -->
+      <article class="student-card" id="student_007" style="border-left: 4px solid #16A34A;">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_007 <span style="color: #F59E0B;">★</span></h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec.md (112 Zeilen)</code>, <code>Wireframe-Desktop.pdf</code>, <code>Wireframe-Mobil.pdf</code>, <code>Ideensammlung_student_007.pdf</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-best" style="font-size: 13.5px; padding: 4px 10px;">15,0 / 15,0 Pkt. · Sehr gut / Bestnote ★ (1,0)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">3,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Erstklassiges Gesamtkonzept mit 5 Unterseiten. Großartiger thematischer Brückenschlag zwischen Geovisualisierung, CAD und regionaler Botanik.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">3,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Referenzqualität! Gestochen scharfe Wireframes für Desktop und Mobilgeräte. Perfektes Komponenten-Downscaling und erstklassige visuelle Hierarchie.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">3,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Gestalterisches Meisterwerk! Organische Farbwelt (<code>#85886A</code>, <code>#DED7C9</code>, <code>#977A60</code>), eigene botanische Vektor-Zeichnungen, Isohypsen, anspruchsvolle Schrifthierarchie (<code>Petrona</code>, <code>Inter Tight</code>, <code>Reenie Beanie</code>) inkl. WCAG 2.1 AA Kontrastprüfung.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">2,0 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Ideensammlung dokumentiert Typo-Vergleiche, Farbpaletten-Genese (Coolors) und grafische Vorstudien lückenlos und nachvollziehbar.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">3,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              112 Zeilen starke Musterspezifikation mit Persona-Analysen für 3 Zielgruppen, HTML5-Landmarks, ARIA-Attributen, Leaflet-Architektur und §5 DDG-Richtlinien.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box" style="background-color: #F0FDF4; border-color: #16A34A; color: #166534;">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Das hohe gestalterische Niveau konsequent in sauberes, valides semantisches HTML5 und modulares CSS3 (Custom Properties) überführen.</span>
+        </div>
+      </article>
+
+      <!-- student_008 -->
+      <article class="student-card" id="student_008">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_008</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec.md (81 Zeilen)</code>, <code>DesktopAnsicht.pdf (212 MB)</code>, <code>MobilAnsicht.pdf (5.8 MB)</code>, <code>Datenschutz.html</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-good" style="font-size: 13.5px; padding: 4px 10px;">12,5 / 15,0 Pkt. · Gut (2,0)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Solide One-Page-Architektur mit klar unterteilten Sektionen (Start, Person, Lebenslauf, Projekte, Kontakt) plus separater <code>Datenschutz.html</code>. Nach mündlicher Freigabe von One-Pagern anerkannt; kleiner Abzug, da konkrete Projektbeschreibungen und Geodaten noch weitgehend Platzhalter sind.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">3,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Detailliert gestaltete Ansichten für Desktop und Mobile vorhanden. Schöne Bildstimmung mit Altbaufassade und burgunderroter Navigationskachel. <em>(Hinweis: Die Desktop-PDF mit 212 MB bitte künftig webgerecht komprimieren).</em>
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">3,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Eigenständiges Farbschema (Bordeaux <code>#9B1D20</code>, Plum <code>#3D2B3D</code>, Warmgrau <code>#635D5C</code>, Lime <code>#CBEFB6</code>). Gute Typografie mit Manrope & DM Sans. Auf ausreichende Farbkontraste bei Texten auf dem hellen Lime-Hintergrund achten.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">1,5 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Konkrete Vorbildseite <code>brostclassen.de</code> analysiert; eine zweite Referenzseite hätte das Bild abgerundet.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr solide formulierte Spezifikation mit detaillierten Flexbox-Planungen und bereits mitgelieferter <code>Datenschutz.html</code>. Geodaten-Konzept für Leaflet/GeoJSON muss noch ergänzt werden.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Die Sektionen in HTML5 mit klaren IDs (<code>#projekte</code>, <code>#ueber-mich</code>) und weichem Scrollverhalten versehen; Geodaten-Anbindung vorbereiten.</span>
+        </div>
+      </article>
+
+      <!-- student_009 -->
+      <article class="student-card" id="student_009">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_009</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec.md (38 Zeilen)</code>, <code>student_009_Meilenstein_1.pdf (4 Seiten)</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-mid" style="font-size: 13.5px; padding: 4px 10px;">10,0 / 15,0 Pkt. · Befriedigend (3,3)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">2,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              4 Unterseiten geplant, jedoch ist <code>ueber-mich.html</code> in der Spezifikation komplett leer geblieben.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">2,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Das PDF illustriert das rotierende Karussell und das Kachelkonzept im Desktop- und Mobilformat. Die Skizzen sind jedoch sehr abstrakt und lassen noch wenig konkrete Web-Struktur erkennen.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">2,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Spannender Mondrian- und Kachel-Ansatz mit Farbfilter-Hover. Allerdings ist die Palette mit 10 verschiedenen Bildfarben sehr unruhig. Die Monospace-Typografie (<code>Courier Prime</code> / <code>Overpass Mono</code>) birgt Risiken für die Lesbarkeit längerer Texte.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">2,0 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr gute Recherche in der PDF: <code>sethhamptonportfolio.webflow.io</code> und <code>ambientcg.com</code> werden mit Screenshots und direktem Bezug zur eigenen Kachelidee analysiert.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">1,0 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Gravierende Lücken in der Spezifikation: Leere Sektionen, Platzhalter-Fragezeichen bei den Breakpoints (<code>???px</code>) und keine Geodaten-Spezifikation. Als KI-Steuerungsdokument so nicht einsatzfähig.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Die <code>spec.md</code> vervollständigen, konkrete CSS-Breakpoints festlegen und das Farbschema auf wenige, harmonische Leitfarben reduzieren.</span>
+        </div>
+      </article>
+
+      <!-- student_010 -->
+      <article class="student-card" id="student_010">
+        <div class="student-header">
+          <div class="student-title-area">
+            <h3>student_010</h3>
+            <div class="student-meta">
+              Eingereichte Dateien: <code>spec.md (54 Zeilen)</code>, <code>Konzept.pdf (1 Seite)</code>, <code>Wireframe-Desktop.pdf</code>, <code>Wireframe-Mobile.pdf</code>
+            </div>
+          </div>
+          <div>
+            <span class="badge badge-mid" style="font-size: 13.5px; padding: 4px 10px;">10,5 / 15,0 Pkt. · Befriedigend (3,0)</span>
+          </div>
+        </div>
+        <ul class="criteria-list">
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K1: Sitemap & Konzept</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              3 Unterseiten definiert (<code>index.html</code>, <code>projekte.html</code>, <code>kontakt.html</code>). Solide Grundlagenstruktur.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K2: Wireframing</span>
+              <span class="criteria-points">2,0 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Die beiden Wireframe-PDFs sind praktisch identisch im schmalen Hochformat aufgebaut. Es findet keine echte responsive Transformation auf einen breiten Desktop-Viewport statt.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K3: Design-System</span>
+              <span class="criteria-points">2,5 / 3,5 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Farbpalette vorhanden (Grautöne <code>#DCDFE3</code>, <code>#3A4150</code>, <code>#9AA2B1</code>). Schöne Idee mit Stadtplan-Hintergrund, aber die kachelartige Ziegelstein-Anordnung wirkt statisch.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K4: Recherche</span>
+              <span class="criteria-points">1,0 / 2,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Weder im Konzept noch in der Spezifikation sind externe Web-Inspirationen oder Best-Practice-Analysen dokumentiert.
+            </div>
+          </li>
+          <li class="criteria-item">
+            <div class="criteria-tag">
+              <span>K5: SDD-Spezifikation</span>
+              <span class="criteria-points">2,5 / 3,0 Pkt.</span>
+            </div>
+            <div class="criteria-desc">
+              Sehr lobenswerter softwaretechnischer Aufbau mit FR (Functional Requirements), NFR und Akzeptanzkriterien (AC). Ein Leaflet-/GeoJSON-Konzept für Folgemeilensteine fehlt noch.
+            </div>
+          </li>
+        </ul>
+        <div class="recommendation-box">
+          <strong>Empfehlung für Meilenstein 2:</strong>
+          <span>Für den Desktop zwingend ein eigenständiges Mehrspalten-Layout (CSS Grid) entwickeln, anstatt die mobile Smartphone-Ansicht auf dem Desktop lediglich mittig anzuzeigen.</span>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Didactic Reflection -->
+  <section class="report-section" id="reflection">
+    <h2 class="section-heading">4. Didaktische Gesamteinschätzung & Empfehlungen für das Modul</h2>
+    
+    <div class="reflection-card">
+      <h4>1. Gestalterische Spitzenleistungen als Vorbild für die Kohorte</h4>
+      <p style="color: var(--text-muted); font-size: 13.5px;">
+        <code>student_007</code> (15,0 Pkt.) und <code>student_002</code> (15,0 Pkt.) zeigen auf herausragende Weise, wie kartografische Themen (botanische Vektoren, Isohypsen der Würzburger Weinberge) in ein konsistentes Webdesign integriert werden können. Beide Arbeiten belegen, dass sowohl klassische Mehrseiter als auch One-Pager mit Sektionen zu Bestnoten führen, wenn das Konzept geschlossen ist.
+      </p>
+    </div>
+
+    <div class="reflection-card">
+      <h4>2. Architektur-Formate & Semantik für Meilenstein 2</h4>
+      <p style="color: var(--text-muted); font-size: 13.5px;">
+        Für den kommenden Meilenstein 2 (HTML5 & CSS3) ist unabhängig von der Seitenanzahl die konsequente semantische Auszeichnung gefordert (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>). Bei One-Pagern ist auf einwandfreie interne Ankerlinks (<code>href="#section"</code>) und barrierefreie Fokusführung zu achten.
+      </p>
+    </div>
+
+    <div class="reflection-card">
+      <h4>3. Typografie, Lizenzen & DSGVO-Konformität</h4>
+      <p style="color: var(--text-muted); font-size: 13.5px;">
+        Einige Abgaben haben Windows-spezifische Systemschriften (z. B. <em>Bahnschrift</em>, <em>Century Gothic</em>, <em>Swiss721</em>) spezifiziert. Diese müssen in Meilenstein 2 zwingend durch frei lizenzierte, lokal gehostete Webfonts (WOFF2 via Google Fonts / Fontsource) ersetzt werden, um plattformübergreifende Darstellung und DSGVO-Konformität zu gewährleisten.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 5: Protocol -->
+  <section class="report-section" id="protocol">
+    <h2 class="section-heading">5. Änderungsprotokoll & Nachweis</h2>
+    <ul class="protocol-list">
+      <li class="protocol-item">
+        <span class="protocol-time">2026-11-10 14:50</span>
+        <span>Bereitstellung der Bewertungsdatei <code>bewertung.md</code> im Arbeitsbereich <code>abgaben/</code>.</span>
+      </li>
+      <li class="protocol-item">
+        <span class="protocol-time">2026-11-10 15:00</span>
+        <span>Analyse der Modulanforderungen aus <code>00_portfolioaufgabe.md</code>; Definition der 5 Bewertungskriterien inklusive gestalterischem Aspekt (15 Punkte Maximal).</span>
+      </li>
+      <li class="protocol-item">
+        <span class="protocol-time">2026-11-10 15:15</span>
+        <span>Vollständiges Audit aller 10 anonymisierten Studierenden-Ordner (<code>student_001</code> bis <code>student_010</code>).</span>
+      </li>
+      <li class="protocol-item">
+        <span class="protocol-time">2026-11-10 15:20</span>
+        <span><strong>Nachsteuerung:</strong> Mündliche Freigabe von One-Pagern mit Sektionen eingepflegt. Punktanpassung bei <code>student_002</code> (+0,5 auf 15,0 Pkt.) und <code>student_008</code> (+0,5 auf 12,5 Pkt.).</span>
+      </li>
+      <li class="protocol-item">
+        <span class="protocol-time">2026-11-10 15:40</span>
+        <span><strong>HTML-Export-Optimierung:</strong> Vollständige Überarbeitung der Datei <code>bewertung.html</code> als responsiver, menschenlesbarer Web-Report mit barrierefreier Typografie, Sticky-Navigation, Kriterien-Matrix, farbigen Noten-Badges und druckoptimiertem Stylesheet.</span>
+      </li>
+    </ul>
+  </section>
+
+</div>
+
+</body>
+</html>

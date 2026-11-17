@@ -1791,10 +1791,10 @@ article {
 <!-- _class: structural -->
 ## Mobile First!
 - 44,2 % der Deutschen Internetnutzer
-greifen mobil zu.
+mobil
 - Im internationalen Vergleich sind
 dies relativ wenige.
-- Weltweit sind es im durschnitt über 53%.
+- Weltweit sind es im Durchschnitt über 53%.
 - Interessant: Bei Mobile steigt KI Nutzung
 - Desktop gewinnt an Boden im Web
 
@@ -1819,15 +1819,14 @@ dies relativ wenige.
 ### CSS Media Queries
 
 - **Was sind Media Queries?**
-  - Ermöglichen, CSS-Regeln nur dann anzuwenden, wenn bestimmte Bedingungen (wie Bildschirmbreite) erfüllt sind.
-  - Webseite passt sich automatisch an Smartphones, Tablets, Desktops an
+  - Ermöglichen, CSS-Regeln nur dann anzuwenden, wenn bestimmte Bedingungen
+  (wie Bildschirmbreite) erfüllt sind.
+  - Webseite passt sich automatisch an Smartphones,
+  Tablets, Desktops an
 
 ```css
 @media (max-width: 768px) {
-  body {
-    background-color: lightblue;
-  }
-}
+  body { background-color: lightblue;}}
 ```
 
 ![Media Queries Concept](../img/media_queries_concept.png)
@@ -1873,7 +1872,7 @@ dies relativ wenige.
 #### Logische Operatoren in Media Queries**
 
 - Bedingungen lassen sich mit `and`, `not`, und `only` verknüpfen.
-- Man kann auch Kommas `,` verwenden (entspricht einem logischen "ODER").
+- Man kann auch Kommata `,` verwenden (entspricht einem logischen "ODER").
 
 ```css
 /* Bildschirm UND mindestens 1024px breit */
@@ -1961,7 +1960,7 @@ ups... 🙄
 - wrapper zurücksetzen
 - headerbild ersetzen
 - Bild zentrieren
-- Höhedes headers reduzieren
+- Höhe des Headers reduzieren
 
 ```css
 #wrapper {
@@ -2097,7 +2096,7 @@ Schrittweises Anpassen des Designs, immer dann, wenn "etwas nicht passt"
 Sinnvolle Breakpoints sind:
 - Smartphones @media (min-width: 576px) { ... }
 - Tablets @media (min-width: 768px) { ... }
-- Desktops @media (min-width: 992px) { ... }
+- Desktops @media (min-width: 1000px) { ... }
 - Large desktops @media (min-width: 1200px) { ... }
 
 
