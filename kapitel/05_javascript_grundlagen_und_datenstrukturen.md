@@ -325,6 +325,86 @@ document.getElementById('addBtn').addEventListener('click', () => {
 > **Beispiel zum Ausprobieren:** Liegt spielfertig unter [`Samples/JS/modules-demo.html`](../Samples/JS/modules-demo.html).
 
 ---
+### Hands-on 1: Internes Skript Schritt für Schritt
+
+**Ziel:** Erstes JavaScript direkt im HTML einbetten und die Browser-Konsole kennenlernen.
+
+1. **Datei anlegen:** Erstelle in VS Code eine neue Datei `01_intern.html`.
+2. **Code abtippen:** Füge folgendes Grundgerüst mit dem `<script>`-Tag am Ende des `<body>` ein:
+```html
+<!DOCTYPE html>
+<html lang="de">
+<body>
+  <h1>Mein erstes JavaScript</h1>
+  <script>    // Schreibt eine Textnachricht in die Entwicklertools (Reiter Console):
+    console.log("Hallo Welt! Das Skript wurde geladen.");
+        alert("Willkommen zur Webprogrammierung!"); // Öffnet ein Hinweisfenster direkt im Browser:
+  </script>
+</body>
+</html>
+```
+---
+
+3. **Ausführen & Verifizieren:**
+   - Öffne die Datei im Browser per Doppelklick. Bestätige das Popup mit **OK**.
+   - Drücke `F12` (oder Rechtsklick ➔ *Untersuchen*) und wechsle auf den Reiter **Console**. Siehst du den Text?
+
+---
+### Hands-on 2: Externes Skript mit `defer` Schritt für Schritt
+
+**Ziel:** HTML und JavaScript sauber in zwei Dateien trennen und blockierungsfrei im `<head>` verknüpfen.
+
+1. **Zwei Dateien im selben Ordner anlegen:** `02_extern.html` und `mein_skript.js`.
+2. **In `mein_skript.js` schreiben (Reine JS-Datei, KEINE HTML-Tags!):**
+```javascript
+// mein_skript.js
+console.log("Schritt 1: Externe JS-Datei erfolgreich geladen!");
+alert("Schritt 2: Gruß aus der ausgelagerten JavaScript-Datei!");
+```
+---
+
+3. **In `02_extern.html` im `<head>` verknüpfen:**
+```html
+<head>
+  <title>Externe Einbindung</title>
+  <!-- defer: Lädt im Hintergrund, führt erst nach dem HTML-Aufbau aus -->
+  <script defer src="mein_skript.js"></script>
+</head>
+<body>
+  <h1>Externe Skript-Trennung</h1>
+</body>
+```
+4. **Ausführen & Verifizieren:** Datei im Browser öffnen und per `F12` in der Konsole prüfen.
+
+---
+### Hands-on 3: ES-Module (`type="module"`) Schritt für Schritt
+
+**Ziel:** Code modular aufteilen – eine Funktion in Datei A bereitstellen (`export`) und in Datei B nutzen (`import`).
+
+1. **Drei Dateien im selben Ordner anlegen:** `03_modul.html`, `gruesser.js` und `app.js`.
+2. **Modul `gruesser.js` schreiben (Export):**
+```javascript
+// gruesser.js: Mit 'export' wird die Funktion für andere Dateien freigegeben
+export function sageHallo(name) {
+    return "Hallo " + name + "! Dein erstes ES-Modul funktioniert.";
+}
+```
+---
+3. **Hauptprogramm `app.js` schreiben (Import & Aufruf):**
+```javascript
+// app.js: Import mit relativem Pfad './'
+import { sageHallo } from './gruesser.js';
+console.log(sageHallo("Geovis-Studi"));
+```
+
+4. **In `03_modul.html` einbinden & starten:**
+```html
+<!-- type="module" aktiviert die Unterstützung für import/export -->
+<script type="module" src="app.js"></script>
+```
+5. **Wichtig:** `03_modul.html` ➔ **Open with Live Server** (Module benötigen HTTP!).
+
+---
 <!-- _class: structural-->
 ## Variablen und Datentypen
 
@@ -476,6 +556,139 @@ Deine Punkte: ${punkte}`;
   ```
 
 > **Regel:** Nutze für jeden zusammengesetzten oder mehrzeiligen Text immer Template Literals (Backticks)!
+
+---
+### Hands-on 1 (1/2): `const` vs. `let` – Der Neuzuweisungs-Test
+
+**Ziel:** Den Unterschied zwischen unveränderlichen (`const`) und veränderlichen (`let`) Variablen in der Praxis erleben.
+
+1. **Datei anlegen:** Erstelle in VS Code eine neue Datei `04_variablen.html`.
+2. **Code mit `<script>`-Block abtippen:**
+```html
+<!DOCTYPE html>
+<html lang="de">...
+<body> <h1>Hands-on 1: const vs. let</h1>  
+  <script>
+    const modulName = "Webprogrammierung";// 1. Fester Wert mit const (Konstante):
+    console.log("Modul:", modulName);
+    modulName = "Geovisualisierung"; // 2. Versuch, const zu überschreiben (Provozierter Fehler!):
+  </script>
+</body>
+</html>
+```
+
+---
+### Hands-on 1 (2/2): Fehler in der Konsole verstehen & beheben
+
+3. **Ausführen & Fehler in der Konsole sehen:**
+   - Öffne `04_variablen.html` im Browser und drücke `F12` ➔ Reiter **Console**.
+   - Du siehst eine rote Fehlermeldung:  
+     `TypeError: Assignment to constant variable.`
+   - *Lerneffekt:* Der Browser verbietet das Überschreiben einer `const`-Variable!
+4. **Fehler beheben (Code anpassen):**
+   - Ändere die Deklaration zu `let`, damit der Wert verändert werden darf:
+```javascript
+let punkte = 10;
+console.log("Startpunkte:", punkte);
+
+punkte = 15; // Erlaubt, da mit 'let' deklariert!
+console.log("Neue Punkte:", punkte);
+```
+   - Speichere und lade die Seite im Browser neu (`F5`). Die rote Meldung ist weg!
+
+---
+### Hands-on 2 (1/2): Datentypen mit `typeof` erforschen
+
+**Ziel:** Primitive Datentypen (Text, Zahl, Boolean) deklarieren und ihren Typ ermitteln.
+
+1. **Datei anlegen:** Erstelle in VS Code eine neue Datei `05_datentypen.html`.
+
+---
+
+2. **Variablen verschiedener Typen deklarieren:**
+```html
+<!DOCTYPE html>
+<html lang="de">
+<body>
+  <h1>Hands-on 2: Datentypen prüfen</h1>
+  <script>
+    const stadt = "Würzburg";      // Typ: string (Text)
+    const plz = 97070;              // Typ: number (Zahl)
+    const istHauptstadt = false;    // Typ: boolean (Wahrheitswert)
+    let geodaten;                   // Typ: undefined (noch kein Wert zugewiesen)
+
+    console.log("stadt ist:", typeof stadt);
+    console.log("plz ist:", typeof plz);
+    console.log("istHauptstadt ist:", typeof istHauptstadt);
+    console.log("geodaten ist:", typeof geodaten);
+  </script>
+</body>
+</html>
+```
+
+---
+### Hands-on 2 (2/2): Vergleiche testen – `===` vs. `==`
+
+3. **Typvergleiche im Skript ergänzen:**
+   - Schreibe zusätzlich folgende Zeilen in deinen `<script>`-Block:
+```javascript
+const eingabeZahl = 42;
+const eingabeText = "42";
+// 1. Loser Vergleich mit == (automatische Typumwandlung):
+console.log("Loser Vergleich (==):", eingabeZahl == eingabeText);
+// Ausgabe: true (Browser wandelt den Text "42" heimlich in eine Zahl um!)
+// 2. Strikter Vergleich mit === (Prüft Wert UND Datentyp):
+console.log("Strikter Vergleich (===):", eingabeZahl === eingabeText);
+// Ausgabe: false (Zahl ist ungleich Text!)
+```
+4. **Ausführen & Verifizieren:**
+   - Im Browser öffnen, `F12` drücken und beide Konsolen-Ausgaben vergleichen.
+   - *Merksatz:* Immer `===` nutzen, um versteckte Typ-Fehler zu vermeiden!
+
+---
+### Hands-on 3 (1/2): Template Literals mit Backticks (`` ` ``)
+
+**Ziel:** Variablen lesbar mit Backticks und `${...}` in Texte einbetten.
+1. **Datei anlegen:** Erstelle in VS Code eine neue Datei `06_strings.html`.
+---
+
+2. **Text zusammenbauen:** Tippe folgenden Code in den `<body>`:
+```html
+<!DOCTYPE html>
+<html lang="de">
+<body>
+  <h1>Hands-on 3: Strings & Backticks</h1>
+  <script>
+    const vorname = "Stefan";
+    const rolle = "Geovis-Dozent";
+    const semester = 3;
+    // Mit Backticks (Taste links neben Backspace mit Shift):
+    const steckbrief = `Hallo, ich bin ${vorname}.
+Rolle: ${rolle}
+Aktuelles Semester: ${semester}. Semester`;
+    console.log(steckbrief);
+  </script>
+</body>
+</html>
+```
+
+---
+### Hands-on 3 (2/2): String-Methoden kombinieren & Testen
+
+3. **Eingebaute String-Methoden anwenden:**
+   - Ergänze im Skript Methoden für Textlänge und Großbuchstaben:
+```javascript
+const ort = "Würzburg";
+// 1. Text in Großbuchstaben umwandeln:
+console.log("Groß:", ort.toUpperCase()); // "WÜRZBURG"
+// 2. Anzahl der Zeichen ermitteln (.length):
+console.log("Zeichenanzahl:", ort.length); // 8
+// 3. Im Template Literal kombinieren:
+console.log(`Der Ort ${ort.toUpperCase()} hat ${ort.length} Buchstaben.`);
+```
+4. **Ausführen & Beobachten:**
+   - Datei im Browser öffnen und `F12` ➔ **Console** prüfen.
+   - *Beachte:* Der mehrzeilige Text aus Teil 1 behält in der Konsole exakt seine Zeilenumbrüche!
 
 ---
 <!-- _class: structural-->
@@ -683,6 +896,145 @@ Steuere den Ablauf innerhalb einer laufenden Schleife gezielt:
 **Ausprobieren:**
 Öffne [*Samples/JS/loops-demo.html*](../Samples/JS/loops-demo.html) im Browser und teste die Buttons mit Live-Konsolenausgabe!
 Code und dessen Funktion lesen und verstehen.
+
+---
+### Hands-on 1 (1/2): Entscheidungen mit `if / else` steuern
+
+**Ziel:** Den Ablauf einer Verzweigung verstehen – Code wird nur ausgeführt, wenn eine Bedingung wahr (`true`) ist.
+
+1. **Datei anlegen:** Erstelle in VS Code eine neue Datei `07_if_else.html`.
+
+---
+
+2. **HTML mit `<script>`-Block abtippen:**
+```html
+<!DOCTYPE html>
+<html lang="de">
+<body>
+  <h1>Hands-on: if / else Verzweigungen</h1>
+  <script>
+    const punktzahl = 85;
+    if (punktzahl >= 90) {
+      console.log("Prädikat: Sehr gut (1,0)!");
+    } else if (punktzahl >= 75) {
+      console.log("Prädikat: Gut (2,0)!");
+    } else {
+      console.log("Prädikat: Bestanden!");
+    }
+  </script>
+</body>
+</html>
+```
+
+---
+### Hands-on 1 (2/2): Werte variieren & Konsole beobachten
+3. **Ausführen & Konsole prüfen:**
+  - Öffne `07_if_else.html` im Browser und drücke `F12` ➔ Reiter **Console**.
+   - Du siehst: `Prädikat: Gut (2,0)!` (weil 85 >= 75, aber nicht >= 90 ist).
+
+4. **Werte experimentell verändern:**
+  - Ändere im Code `const punktzahl = 95;` ➔ Speichern, im Browser neu laden (`F5`).  
+     *Ausgabe:* `Prädikat: Sehr gut (1,0)!`
+   - Ändere zu `const punktzahl = 50;` ➔ Speichern, `F5`.  
+     *Ausgabe:* `Prädikat: Bestanden!`
+   - *Lerneffekt:* Der Browser prüft von oben nach unten und führt **nur den ersten zutreffenden Block** aus.
+
+---
+### Hands-on 2 (1/2): Mehrfachauswahl mit `switch / case`
+
+**Ziel:** Eine Variable auf feste Textwerte prüfen (ideal für Kartenebenen oder Menüs).
+
+1. **Datei anlegen:** Erstelle in VS Code eine neue Datei `08_switch_case.html`.
+
+---
+
+2. **HTML mit `<script>`-Block abtippen:**
+```html
+<!DOCTYPE html>
+<html lang="de">
+<body>
+  <h1>Hands-on: switch / case Auswahl</h1>
+  <script>
+    const kartenEbene = "satellit";
+    switch (kartenEbene) {
+      case "osm":
+        console.log("OpenStreetMap-Hintergrund wird geladen.");
+        break; // Wichtig: Beendet die switch-Verzweigung!
+      case "satellit":
+        console.log("Satellitenbild-Layer wird aktiviert.");
+        break;
+      default: console.log("Unbekannte Ebene! Standardkarte wird geladen.");
+    }
+  </script>
+</body>
+</html>
+```
+
+---
+### Hands-on 2 (2/2): Das `break`-Schlüsselwort & `default` verstehen
+
+3. **Ausführen & Konsole prüfen:**
+ - Öffne `08_switch_case.html` im Browser (`F12` ➔ **Console**).  
+     *Ausgabe:* `Satellitenbild-Layer wird aktiviert.`
+
+4. **Den `default`-Fall testen:**
+ - Ändere oben `const kartenEbene = "gelaende";` ➔ Speichern, `F5`.  
+     *Ausgabe:* `Unbekannte Ebene! Standardkarte wird geladen.` (Der Auffang-Block greift!).
+
+5. **Typischer Fehler: Das `break;` vergessen:**
+ - Kommentiere `break;` bei `"satellit"` mit `// break;` aus.
+  - Seite neu laden (`F5`): Es wird der Satelliten- **UND** der Default-Text ausgegeben!
+   - *Merksatz:* Ohne `break;` "fällt" JavaScript automatisch in die darunterliegenden Cases durch!
+
+---
+### Hands-on 3 (1/2): Die Zählschleife (`for`) Schritt für Schritt
+
+**Ziel:** Einen Code-Block automatisiert mehrmals wiederholen, ohne ihn mehrfach abzutippen.
+
+1. **Datei anlegen:** Erstelle in VS Code eine neue Datei `09_schleifen.html`.
+
+---
+
+2. **Klassische Zählschleife abtippen:**
+```html
+<!DOCTYPE html>
+<html lang="de">
+<body>
+  <h1>Hands-on: Schleifen in JavaScript</h1>
+  <script>
+    // Zählt von 1 bis 5 (i++ erhöht den Zähler in jedem Durchlauf um 1):
+    for (let i = 1; i <= 5; i++) {
+      console.log(`Durchlauf Nummer: ${i}`);
+    }
+  </script>
+</body>
+</html>
+```
+3. **Ausführen:** Datei im Browser öffnen und `F12` ➔ **Console** prüfen. Du siehst 5 Zeilen untereinander!
+
+---
+### Hands-on 3 (2/2): Listen durchlaufen mit `for...of`
+
+**Ziel:** Eine Liste von Geodaten-Orten (Array) elegant von Anfang bis Ende durchlaufen.
+
+---
+
+4. **Listen-Schleife im `<script>` ergänzen:**
+ - Schreibe direkt unter deine `for`-Schleife folgenden Code:
+```javascript
+// Ein Array (Liste) mit Geovis-Standorten:
+const staedte = ["Würzburg", "Schweinfurt", "Aschaffenburg"];
+
+// for...of holt nacheinander jeden Eintrag direkt aus der Liste:
+for (const stadt of staedte) {
+  console.log(`Geovis-Standort: ${stadt}`);
+}
+```
+
+5. **Ausführen & Verstehen:**
+   - Im Browser neu laden (`F5`).
+   - *Lerneffekt:* Mit `for...of` musst du keinen Indexzähler (`i`) verwalten
+   – JavaScript gibt dir direkt jedes Element!
 
 ---
 <!-- _class: structural-->
